@@ -1,0 +1,84 @@
+*{
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  font-family: Arial;
+  color: black;
+  background-image: url('TestBackground.jpeg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+body{
+  margin: 8px;
+}
+
+
+.topBox{
+  display: flex;
+  align-self: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 10px 20px;
+  background-color: #014421;
+}
+
+.leftBoxL{
+  display: flex;
+  align-items: center;
+}
+.rightBoxL{
+  display: flex;
+  margin-right: 1rem;
+}
+.rightBoxR{
+  display: flex;
+}
+.bottomBox{
+  display: flex;
+  width: 100%;
+  height: 93%;
+
+}
+.toplink {
+  background-color: #014421;
+  float: left;
+  border: none;
+  font-size: 25px;
+}
+
+#topcolor{
+  text-decoration: none;
+  color: white;
+}
+
+.centerBox{
+  display: flex;
+  align-self: center;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: white;
+  background-color: #014421;
+  border-radius: 10%;
+
+}
+
+.centerTopBox{
+  display: flex;
+  margin-bottom: 8%;
+}
+
+.atmLogin{
+  background-color: #014421;
+  float: left;
+  border: none;
+  font-size: 5vw;
+  margin-top: 5%;
+}
+
+.buttonGroup{
+    display: flex;
+    flex-direction: row;
+}
