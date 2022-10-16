@@ -40,7 +40,7 @@ body{
   display: flex;
   width: inherit;
   height: inherit;
-  justify-content: center;
+
 
 }
 .toplink {
@@ -58,7 +58,8 @@ body{
 .centerBox{
   display: flex;
   align-self:center;
-  padding: 9rem;
+  padding: 4rem 9rem;
+  margin-bottom: 15rem;
 
 }
 
@@ -70,6 +71,8 @@ body{
 
 .centerLeftBox{
   display: flex;
+  width: 42rem;
+
 }
 
 .atmLogin{
