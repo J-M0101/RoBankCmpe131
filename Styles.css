@@ -5,7 +5,7 @@
 body, html {
   height: 100%;
   font-family: Arial;
-  color: black;
+  color: white;
   background-image: url('TestBackground.jpeg');
   background-repeat: no-repeat;
   background-size: cover;
@@ -21,7 +21,7 @@ body{
   align-self: center;
   justify-content: space-between;
   width: 100%;
-  padding: 10px 20px;
+  padding: 1rem 2rem;
   background-color: #014421;
 }
 
@@ -31,22 +31,23 @@ body{
 }
 .rightBoxL{
   display: flex;
-  margin-right: 1rem;
+  margin-right:5rem;
 }
 .rightBoxR{
   display: flex;
 }
 .bottomBox{
   display: flex;
-  width: 100%;
-  height: 93%;
+  width: inherit;
+  height: inherit;
+  justify-content: center;
 
 }
 .toplink {
   background-color: #014421;
   float: left;
   border: none;
-  font-size: 25px;
+  font-size: 50px;
 }
 
 #topcolor{
@@ -56,18 +57,19 @@ body{
 
 .centerBox{
   display: flex;
-  align-self: center;
-  margin-left: auto;
-  margin-right: auto;
-  background-color: white;
-  background-color: #014421;
-  border-radius: 10%;
+  align-self:center;
+  padding: 9rem;
 
 }
 
-.centerTopBox{
+.centerBox2{
   display: flex;
-  margin-bottom: 8%;
+  align-self:center;
+  padding: 18rem;
+}
+
+.centerLeftBox{
+  display: flex;
 }
 
 .atmLogin{
@@ -75,7 +77,19 @@ body{
   float: left;
   border: none;
   font-size: 5vw;
-  margin-top: 5%;
+  margin-top: 5rem;
+}
+
+.centerRightBox{
+  display: flex;
+
+}
+
+.signIn{
+  display: flex;
+  background-color: 014421
+  float: right;
+  font-size: 5vw;
 }
 
 .buttonGroup{
