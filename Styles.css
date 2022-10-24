@@ -8,7 +8,7 @@ body, html {
   color: white;
   background-image: url('TestBackground.jpeg');
   background-repeat: no-repeat;
-  background-size: auto;
+  background-size: cover;
 }
 
 body{
