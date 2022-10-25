@@ -2,16 +2,16 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Processing File</title>
+    <title>Personal</title>
   </head>
   <body>
-    <h1>Processing</h1>
+    <h1>Personal</h1>
     <?php
       if (isset($_POST["username"]) && isset($_POST["password"]) && isset($_POST["email"])) {
         if  ($_POST["username"] && $_POST["password"] && $_POST["email"]){
             $username = $_POST["username"];
             $password = $_POST["password"];
-            $email = $_POST["email"]
+            $email = $_POST["email"];
 
         //create connection
         $conn = mysqli_connect("localhost", "root", "", "robank");
