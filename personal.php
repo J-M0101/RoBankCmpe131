@@ -22,7 +22,7 @@
         }
 
         //register user
-        $sql = "INSERT INTO client (username, password, email) VALUES ('$username', '$password', '$email')";
+        $sql = "INSERT INTO client (email, username, passwrod) VALUES ('$email', '$username', '$password')";
 
         $results = mysqli_query($conn, $sql);
 
