@@ -7,11 +7,11 @@
   <body>
     <h1>Personal</h1>
     <?php
-      if (isset($_POST["username"]) && isset($_POST["password"]) && isset($_POST["email"])) {
+      if (isset($_POST["email"]) && isset($_POST["username"]) && isset($_POST["password"])) {
         if  ($_POST["username"] && $_POST["password"] && $_POST["email"]){
-            $username = $_POST["username"];
-            $password = $_POST["password"];
-            $email = $_POST["email"];
+            $username = $_POST["email"];
+            $password = $_POST["username"];
+            $email = $_POST["password"];
 
         //create connection
         $conn = mysqli_connect("localhost", "root", "", "robank");
