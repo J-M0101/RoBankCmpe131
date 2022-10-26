@@ -89,21 +89,24 @@ body{
 
 .centerBox2{
   display: flex;
-  /* align-self:center; */
+  align-self:center;
   align-items: center;
-  width: 80rem;
+   width: 80rem;
+  height: 30rem;
   justify-content: center;
   background-color: #014421;
-  justify-content: center;
+  border-radius: 10px;
+  margin-right: 100px;
+  margin-top: 80px;
+  margin-bottom: 25px;
 
 }
 
 .centerRightBox{
   display: flex;
-  width: 200px;
-  height: auto;
-  margin-left: 30px;
-  font-size: 1.25rem;
+  /* height: auto; */
+  /* margin-left: 200px; */
+  font-size: 3rem;
 }
 
 /* Page 2 */
@@ -114,6 +117,9 @@ body{
   height: inherit;
   align-self: center;
   justify-content: center;
+}
+input{
+  font-size: xx-large;
 }
 
 .lowerBackdrop{
@@ -133,4 +139,9 @@ body{
   align-items: center;
   border-width: thick;
   background-color: #014421;
+}
+
+.submitBtn{
+  display: flex;
+  justify-content: center;
 }
