@@ -8,7 +8,7 @@
     <h1>Personal</h1>
     <?php
       if (isset($_POST["email"]) && isset($_POST["username"]) && isset($_POST["password"])) {
-        if  ($_POST["username"] && $_POST["password"] && $_POST["email"]){
+        if  ($_POST["email"] && $_POST["username"] && $_POST["password"]){
             $username = $_POST["email"];
             $password = $_POST["username"];
             $email = $_POST["password"];
