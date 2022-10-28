@@ -6,9 +6,10 @@ body, html {
   height: 100%;
   font-family: Arial;
   color: white;
+  background-color: black;
   background-image: url('TestBackground.jpeg');
   background-repeat: no-repeat;
-  background-size: auto;
+  background-size:130%
 }
 
 body{
@@ -60,7 +61,7 @@ body{
   width: inherit;
   height: inherit;
   align-self: center;
-  justify-content: space-between;
+  justify-content: space-around;
 
 
 }
@@ -70,7 +71,7 @@ body{
   width: 200rem;
   align-self:center;
   justify-content: center;
-  margin-bottom: 15rem;
+
 
 
 }
@@ -84,26 +85,33 @@ body{
   background-color: #014421;
   border: none;
   font-size: 5rem;
-  margin-top: 5rem;
 }
 
 .centerBox2{
   display: flex;
-  /* align-self:center; */
+  align-self:center;
   align-items: center;
   width: 80rem;
+  height: 30rem;
   justify-content: center;
   background-color: #014421;
-  justify-content: center;
+  
+  /* margin-top: 80px; */
+  /* margin-bottom: 25px; */
 
 }
 
 .centerRightBox{
   display: flex;
-  width: 200px;
-  height: auto;
-  margin-left: 30px;
-  font-size: 1.25rem;
+  /* height: auto; */
+  /* margin-left: 200px; */
+  font-size: 3rem;
+}
+
+.submitBtn{
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
 }
 
 /* Page 2 */
@@ -113,7 +121,10 @@ body{
   width: inherit;
   height: inherit;
   align-self: center;
-  justify-content: center;
+  justify-content: space-around;
+}
+input{
+  font-size: xx-large;
 }
 
 .lowerBackdrop{
@@ -126,11 +137,49 @@ body{
 
 }
 
+.infoBox{
+  display: flex;
+  
+}
+
+table td {
+  border: solid 3px black;
+  width: 16rem;
+  height: 3rem;
+  word-wrap: break-word;
+  background-color: #014421;
+  text-align: center;
+}
+
+
 .checkingsaccount{
   display: flex;
-  justify-content: center;
-  height: 150px;
+  justify-content: space-around;
+  height: 9rem;
   align-items: center;
-  border-width: thick;
+  /* border-width: thick; */
   background-color: #014421;
+  flex-direction: column;
+  font-size: 2rem;
 }
+
+.depoBox{
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  background-color: #014421;
+  height: 150px;
+  width: 150px;
+}
+
+/* .deposit{ */
+  /* display: flex;
+  /* justify-content: space-around; */
+  /* height: 9rem;
+  align-items: center; */
+  /* border-width: thick; */
+  /* background-color: #014421;
+  flex-direction: column;
+  font-size: 2rem; */ */
+/* } */
+
