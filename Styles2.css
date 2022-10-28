@@ -77,14 +77,12 @@ body{
   width: 200rem;
   align-self:center;
   justify-content: center;
-  margin-bottom: 15rem;
-
-
-
 }
 
 .centerLeftBox{
   display: flex;
+  align-items: center;
+  margin-top: 75px;
 }
 
 .atmLogin{
