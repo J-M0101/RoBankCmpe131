@@ -40,11 +40,33 @@
  ?>
 
 
+
 <html>
-  <header>
-    <title>Admin</title>
-  </header>
+  <head>
+    <meta charset="UTF-8">
+    <!-- <link rel="stylesheet" href="styles.css">  -->
+    <title>Robank Web Login</title>
+  </head>
   <body>
+    <!-- Top of bar box. Designed with CSS flexdispalays.  -->
+      <div class = "topBox">
+        <div class = "leftBoxL">
+          <button class="toplink"><a href="ATMLogin.html" id="topcolor">RoBank</a></button>
+        </div>
+        <div class = "buttonGroup">
+          <div class = "rightBoxL">
+            <button class="toplink"><a href="#" id="topcolor">Home</a></button>
+          </div>
+
+          <div class = "rightBoxR">
+            <button class="toplink"><a href="accountInfo.html" id="topcolor">Login</a></button>
+          </div>
+        </div>
+      </div>
+
+
+
+<!-- Login and display backend  -->
     <h1>Login Page</h1>
     <form action = "/admin.php" method="post">
       <input type="text" name="username">
@@ -78,23 +100,21 @@
             }
           }
         ?>
+      </tbody>
+    </table>
+
         <?php
           if ($logged_in && $results){
           $conn = mysqli_connect("localhost", "root", "", "bank");
           $sql = "SELECT * FROM `accounts` WHERE `username`='$username'  ";
           $result = $conn->query($sql);
           foreach($result as $row) {
-            echo "\r\n";
-            echo "<td>" . $row["account"] . "</td>";
-            echo "\n";
-            echo "<td>" . $row["type"] . "</td>";
-            echo "\n";
-            echo "<td>$" . $row["balance"] . "</td>";
-            echo "\n";
+            echo "<BR>";
+            echo "<td>xxxx" . $row["account"] . "   </td>";
+            echo "<td>\t       " . $row["type"] . "   </td>";
+            echo "<td>\t       $" . $row["balance"] . "   </td>";
           }
         }
         ?>
-      </tbody>
-    </table>
   </body>
 </html>
