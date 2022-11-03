@@ -59,12 +59,17 @@ body{
   font-size: 10px;
 }
 
+.blackText{
+  text-decoration-color: black;
+}
+
 #topcolor{
   text-decoration: none;
   color: white;
 }
 
 .bottomBox{
+  flex-grow: 1;
   display: flex;
   width: inherit;
   /* height: none; */
@@ -98,14 +103,56 @@ body{
   display: flex;
   /* align-self:center; */
   align-items: center;
-  width: 80rem;
+  flex-grow: 1;
   height: 30rem;
   /* justify-content: center; */
   background-color: #014421;
   border-radius: 10px;
-  margin-right: 100px;
-  margin-top: 80px;
-  margin-bottom: 25px;
+}
+
+/* Middle empty box no background*/
+.centerBox3{
+  display: flex;
+  /* align-self:center; */
+  /* align-items: center; */
+  flex-grow: 1;
+  flex-direction: column;
+  margin-bottom: 1rem;
+  height: 30rem;
+  justify-content: space-between
+  /* justify-content: center; */
+}
+
+/* Middle box of middle empty box*/
+.centerTab{
+  display: flex;
+  /* align-self:center; */
+  align-items: center;
+  height: 2rem;
+  background-color: #014421;
+  color: white;
+  /* justify-content: center; */
+
+  float: center;
+  border: none;
+  /* font-size: 25px; */
+}
+
+/* Middle buttons of middle empty box*/
+.centerButtons{
+  display: flex;
+  /* align-self:center; */
+  align-items: center;
+  align-self: center;
+  height: 5rem;
+  width: 80rem;
+  background-color: #014421;
+  color: white;
+  /* justify-content: center; */
+  text-align: center;
+  float: center;
+  border: none;
+  font-size: 25px;
 }
 
 /* Box inside the right of green box */
@@ -116,6 +163,7 @@ body{
   margin-left: 30px;
   font-size: 1.25rem;
   border-radius: 10px;
+  color: white;
 }
 
 /* Page 2 */
@@ -147,11 +195,19 @@ body{
   background-color: #014421;
 }
 
-/* ------------------------- */
+/* main account page */
 
-h1 {
-  background-color: #014421;
+.centerBoxDisplayBalance{
+  display: flex;
+  flex-grow: 1;
+  /* align-self:center; */
+  align-items: center;
+  height: 5rem;
+  /* justify-content: center; */
+  background-color: white;
 }
+
+/* ------------------------- */
 
 .custom {
   color: #FFFFFF;
