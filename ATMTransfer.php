@@ -25,19 +25,8 @@
 
     <div class = "bottomBox">
     
-        <div class ="optionsPB">
-            <div><a href="/robank/ATMCashWithdaw.php" id="topcolortwo">
-                Cash Withdraw</a>
-            </div>
-            <div><a href="/robank/ATMDeposit.php" id="topcolortwo">
-                Deposit</a>
-            </div>
-            <div><a href="/robank/ATMBalanceInquirey.php" id="topcolortwo">
-                Balance Inquirey </a>
-            </div>
-            <div><a href="/robank/ATMTransfer.php" id="topcolortwo">
-                Transfer</a>
-            </div>
+        <div class ="depoInfo">
+            
         </div>
 
     </div>
