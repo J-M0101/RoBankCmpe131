@@ -33,7 +33,7 @@
                 {
                     $logged_in = true;
                     // echo "Successful login";
-                    header("Location: /github/accountInfo.html");
+                    header("Location: /github/ATMOptions.html");
                 }
                 else
                 {
