@@ -205,7 +205,7 @@ table td {
   align-self:center;
   align-items: center;
   width: 70rem;
-  height: 60rem;
+  height: 50rem;
   justify-content: center;
   background-color: #014421;
   flex-direction: column;
@@ -215,3 +215,9 @@ table td {
   /* margin-bottom: 25px; */
 }
 
+.optionsPB div{
+  align-items: center;
+  font-size: 4rem;
+  margin-bottom: 3.5rem;
+  margin-top: 3.5rem;
+}
