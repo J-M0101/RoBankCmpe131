@@ -1,0 +1,165 @@
+*{
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  font-family: Arial;
+  color: white;
+  background-image: url('TestBackgroundColor.jpeg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-y: center;
+}
+
+body{
+  margin: 0px;
+}
+
+.topBox{
+  display: flex;
+  align-self: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 1rem 2rem;
+  background-color: #014421;
+}
+
+.leftBoxL{
+  display: flex;
+  align-items: center;
+  font-style: normal;
+}
+
+.buttonGroup{
+    display: flex;
+    flex-direction: row;
+}
+
+.rightBoxL{
+  display: flex;
+  margin-right:5rem;
+}
+
+.rightBoxR{
+  display: flex;
+}
+
+/* Top bar with 3 buttons */
+.toplink {
+  background-color: #014421;
+  float: left;
+  border: none;
+  font-size: 25px;
+}
+
+.otherOptionButton {
+  background-color: #014421;
+  float: left;
+  border: none;
+  font-size: 10px;
+}
+
+#topcolor{
+  text-decoration: none;
+  color: white;
+}
+
+.bottomBox{
+  display: flex;
+  width: inherit;
+  /* height: none; */
+  align-self: center;
+  justify-content: space-between;
+}
+
+.centerBox{
+  display: flex;
+  width: 200rem;
+  align-self:center;
+  justify-content: center;
+}
+
+.centerLeftBox{
+  display: flex;
+  align-items: center;
+  margin-top: 75px;
+}
+
+.atmLogin{
+  background-color: #014421;
+  border: none;
+  font-size: 5rem;
+  margin-top: 5rem;
+}
+
+
+/* Right green box */
+.centerBox2{
+  display: flex;
+  /* align-self:center; */
+  align-items: center;
+  width: 80rem;
+  height: 30rem;
+  /* justify-content: center; */
+  background-color: #014421;
+  border-radius: 10px;
+  margin-right: 100px;
+  margin-top: 80px;
+  margin-bottom: 25px;
+}
+
+/* Box inside the right of green box */
+.centerRightBox{
+  display: flex;
+  width: 250px;
+  height: auto;
+  margin-left: 30px;
+  font-size: 1.25rem;
+  border-radius: 10px;
+}
+
+/* Page 2 */
+
+.parentBox{
+  display: flex;
+  width: inherit;
+  height: inherit;
+  align-self: center;
+  justify-content: center;
+}
+
+.lowerBackdrop{
+  display: flex;
+  align-self: center;
+  width: 800px;
+  height: 700px;
+  flex-direction: column;
+  justify-content: space-around;
+
+}
+
+.checkingsaccount{
+  display: flex;
+  justify-content: center;
+  height: 150px;
+  align-items: center;
+  border-width: thick;
+  background-color: #014421;
+}
+
+/* ------------------------- */
+
+h1 {
+  background-color: #014421;
+}
+
+.custom {
+  color: #FFFFFF;
+}
+
+#imagesize {
+  margin-top: 10px;
+  width: 12.5%;
+  height: 25%;
+}

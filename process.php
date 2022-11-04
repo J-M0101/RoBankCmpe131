@@ -29,7 +29,6 @@
                           <p class="atmLogin">Account Processing</p>
                         </div>
                     </div>
-                  </div>
 <!--processing forms-->
             <div class="section row">
                 <div class="section-text col-right">
@@ -73,5 +72,6 @@
                      ?>
                 </div>
             </div>
+          </div>
     </body>
 </html>
