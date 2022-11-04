@@ -215,6 +215,19 @@ table td {
   /* margin-bottom: 25px; */
 }
 
+.depoInfo{
+  display: flex;
+  align-self:center;
+  align-items: center;
+  width: 50rem;
+  height: 50rem;
+  justify-content: center;
+  background-color: #014421;
+  flex-direction: column;
+  border-radius: 2rem;
+}
+
+
 .optionsPB div{
   align-items: center;
   font-size: 4rem;
