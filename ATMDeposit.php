@@ -26,13 +26,14 @@
       <div class = "bottomBox">
         
         <div class ="depoInfo">
-          <form action="/action_page.php" method="get">
+          <form action="actionATMDeposit.php" method="post">
 
             <label for="CardNumber">Deposit Amount:<br></label>
-            <input type="text" id="CardNumber" name="CardNumber"><br><br><br><br><br>
+            <input type="text" id="deposit" name="deposit"><br><br><br><br><br>
             
             <label for="#">Account:<br></label>
-            <input type="password" id="pin" name="pin"><br><br>
+            <input type="password" id="account" name="account"><br><br>
+            
             <div class="submitBtn">
               <input type="file" id="myFile" name="filename"><br><br>
                 <input type="submit">

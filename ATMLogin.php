@@ -7,6 +7,34 @@
 
   <body>
 
+<!-- Drop/Create Database on Loading for Development purposes only -->
+<?php
+  $conn = mysqli_connect("localhost", "root", "", "atmlogin");
+
+  if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+  }
+
+  $drop = "DROP TABLE IF EXISTS creditcard;";
+  $create = "CREATE TABLE creditcard( creditCardNumber varchar(255) NOT NULL UNIQUE,
+                                      pin varchar(255) NOT NULL,
+                                      balance varchar(255) NOT NULL DEFAULT(0))";
+  // $insert = "INSERT INTO creditcard (creditCardNumber, pass) VALUES (12345, 1111)";
+  try
+  {
+    // $results = mysqli_query($conn, $drop);
+    // $results = mysqli_query($conn, $create);
+    // $results = mysqli_query($conn, $insert);
+  }
+  catch(Exception $e)
+  {
+    header("Location: ATMLogin.php");
+    echo "Failed to create database";
+    die();
+  }
+?>
+<!-- Drop/Create Database on Loading for Development purposes only -->
+
 <!-- Top of bar box. Designed with CSS flexdispalays.  -->
     <div class = "topBox">
       <div class = "leftBoxL">
@@ -34,9 +62,9 @@
         <p class="atmLogin">ATM LOGIN</p>
         <div class = "centerRightBox">
             <!-- <p class="atmLogin">ATM LOGIN</p> -->
-            <form action="/action_page.php" method="get">
+            <form action="/github/actionATMLogin.php" method="post">
               <label for="CardNumber">Card Number:<br></label>
-              <input type="text" id="CardNumber" name="CardNumber"><br><br>
+              <input type="text" id="creditCardNumber" name="creditCardNumber"><br><br>
               <label for="pin">Pin:<br></label>
               <input type="password" id="pin" name="pin"><br><br>
               <div class="submitBtn">
