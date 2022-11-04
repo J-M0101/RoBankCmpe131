@@ -26,16 +26,16 @@
     <div class = "bottomBox">
     
         <div class ="optionsPB">
-            <div><a href="#" id="topcolor">
+            <div><a href="#" id="topcolortwo">
                 Cash Withdraw</a>
             </div>
-            <div><a href="ATMDeposit.html" id="topcolor">
+            <div><a href="ATMDeposit.html" id="topcolortwo">
                 Deposit</a>
             </div>
-            <div><a href="#" id="topcolor">
+            <div><a href="#" id="topcolortwo">
                 Balance Inquirey </a>
             </div>
-            <div><a href="#" id="topcolor">
+            <div><a href="#" id="topcolortwo">
                 Transfer</a>
             </div>
         </div>

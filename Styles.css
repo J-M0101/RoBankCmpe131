@@ -95,6 +95,8 @@ body{
   background-color: #014421;
   flex-direction: column;
   border-radius: 2rem;
+  border-bottom: 1.3rem solid #013220;
+  border-right: 1rem solid #013220;
   
   /* margin-top: 80px; */
   /* margin-bottom: 25px; */
@@ -198,6 +200,8 @@ table td {
   flex-direction: column;
   font-size: 2rem;
   border-radius: 2rem;
+  border-bottom: 1rem solid #013220;
+  border-right: .7rem solid #013220;
 }
 
 .optionsPB{
@@ -210,6 +214,8 @@ table td {
   background-color: #014421;
   flex-direction: column;
   border-radius: 2rem;
+  border-bottom: 1.3rem solid #013220;
+  border-right: 1rem solid #013220;
   
   /* margin-top: 80px; */
   /* margin-bottom: 25px; */
@@ -220,12 +226,14 @@ table td {
   align-self:center;
   align-items: center;
   width: 50rem;
-  height: 50rem;
+  height: 40rem;
   justify-content: center;
   background-color: #014421;
   flex-direction: column;
   border-radius: 2rem;
   font-size: 2rem;
+  border-bottom: 1.3rem solid #013220;
+  border-right: 1rem solid #013220;
 }
 
 
@@ -235,4 +243,16 @@ table td {
   margin-bottom: 3.5rem;
   margin-top: 3.5rem;
   
+}
+
+.depoCenter{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-bottom: 4rem;
+}
+
+#topcolortwo{
+  text-decoration: none;
+  color: white;
 }

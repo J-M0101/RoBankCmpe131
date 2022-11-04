@@ -28,11 +28,17 @@
         <div class ="depoInfo">
           <form action="/action_page.php" method="get">
 
-            <label for="CardNumber">Deposit Amount:<br></label>
-            <input type="text" id="CardNumber" name="CardNumber"><br><br><br><br><br>
-            
-            <label for="#">Account:<br></label>
-            <input type="password" id="pin" name="pin"><br><br><br>
+            <div class = "depoCenter">
+              <label for="CardNumber">Deposit Amount:<br></label>
+              <input type="text" id="CardNumber" name="CardNumber">
+            </div>
+            <div>
+              (Upload photo of front and back of check)
+            </div>
+            <div class="submitBtn">
+              <input type="file" id="myFile" name="filename"><br><br>
+              <input type="submit">
+            </div>
             <div class="submitBtn">
               <input type="file" id="myFile" name="filename"><br><br>
               <input type="submit">
