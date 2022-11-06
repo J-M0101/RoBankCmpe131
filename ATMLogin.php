@@ -34,7 +34,7 @@
         <p class="atmLogin">ATM LOGIN</p>
         <div class = "centerRightBox">
             <!-- <p class="atmLogin">ATM LOGIN</p> -->
-            <form action="/action_page.php" method="get">
+            <form action="actionATMLoginJM.php" method="post">
               <label for="CardNumber">Card Number:<br></label>
               <input type="text" id="CardNumber" name="CardNumber"><br><br>
               <label for="pin">Pin:<br></label>
