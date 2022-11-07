@@ -50,7 +50,13 @@ body{
   float: left;
   border: none;
   font-size: 50px;
+  color: white;
 }
+
+.toplink:hover {
+  background-color: hsl(118, 69%, 25%);
+  color: white;
+} 
 
 #topcolor{
   text-decoration: none;

@@ -5,7 +5,7 @@ session_start();
 <html>
   <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="Styles.css">
     <title>Robank ATM Login</title>
   </head>
 

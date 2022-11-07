@@ -36,7 +36,7 @@ function list_accounts($account_type) {
 <html>
   <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="Styles.css">
     <title>Account Info</title>
   </head>
 

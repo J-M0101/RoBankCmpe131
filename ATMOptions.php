@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="Styles.css">
     <title>Robank ATM Login</title>
   </head>
   <body>
@@ -25,28 +25,28 @@
 
     <div class = "bottomBox">
         <div class ="optionsPB">
-            <?= $_POST['account_id'] ?>
+            <!-- <?= $_POST['account_id'] ?> -->
             <div>
                 <form action="/robank/ATMCashWithdaw.php" method="post">
-                <input type="hidden" name="account_id" value="<?= $_POST['account_id']?>">
-                <button type="submit">Cash Withdraw</button>
+                <input  type="hidden" name="account_id" value="<?= $_POST['account_id']?>">
+                <button style = 'color: white' class="toplink" type="submit">Cash Withdraw</button>
                 </form>
             </div>
             <div>
                 <form action="/robank/ATMDeposit.php" method="post">
                 <input type="hidden" name="account_id" value="<?= $_POST['account_id']?>">
-                <button type="submit">Deposit</button>
+                <button style = 'color: white' class="toplink" type="submit">Deposit</button>
                 </form>
             </div>
             <div>
                 <form action="/robank/ATMBalanceInquirey.php" method="post">
                 <input type="hidden" name="account_id" value="<?= $_POST['account_id']?>">
-                <button type="submit">Balance Inquirey</button>
+                <button style = 'color: white' class="toplink" type="submit">Balance Inquirey</button>
                 </form>
             </div>
             <div><form action="/robank/ATMTransfer.php" method="post">
                 <input type="hidden" name="account_id" value="<?= $_POST['account_id']?>">
-                <button type="submit">Transfer</button>
+                <button style = 'color: white' class="toplink" type="submit">Transfer</button>
                 </form>
             </div>
         </div>
