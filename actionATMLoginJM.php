@@ -1,6 +1,7 @@
 <?php
+    session_start();
     $logged_in = false;
-
+    $_SESSION['cardnumber'] = $_POST["CardNumber"];
     if (isset($_POST["CardNumber"]) && isset($_POST["pin"])) 
     {
         if ($_POST["CardNumber"] && $_POST["pin"]) 

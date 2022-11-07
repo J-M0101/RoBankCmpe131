@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <html>
   <head>
     <meta charset="UTF-8">
@@ -37,14 +40,15 @@
             
               if (!$conn) {
                   die("Connection failed: " . mysqli_connect_error());
-              }
-                $sql = "SELECT accountname FROM accounts WHERE username = 'david123' AND type = 'checking';";
+              } 
+                $r = $_SESSION['cardnumber'];
+                $sql = "SELECT accountname FROM accounts where username LIKE (SELECT username FROM accounts WHERE cardnumber = '$r') AND type = 'checking';";
                 $results = mysqli_query($conn, $sql);
                 // $row = mysqli_fetch_assoc($results);
                 if($results)
                 {
                   while($row = mysqli_fetch_assoc($results)){
-                  echo "<a href='/robank/ATMOptions.php'>" . $row['accountname'] . "</a>";
+                    echo "<a href='/robank/ATMOptions.php'>" . $row['accountname'] . "</a>";
                   }
                 }
               ?>
@@ -61,7 +65,8 @@
               if (!$conn) {
                   die("Connection failed: " . mysqli_connect_error());
               }
-                $sql = "SELECT accountname FROM accounts WHERE username = 'david123' AND type = 'savings';";
+              // $r = $_SESSION['cardnumber'];
+                $sql = "SELECT accountname FROM accounts where username LIKE (SELECT username FROM accounts WHERE cardnumber = '$r') AND type = 'savings';";
                 $results = mysqli_query($conn, $sql);
                 // $row = mysqli_fetch_assoc($results);
                 if($results)
