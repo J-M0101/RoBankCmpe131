@@ -1,5 +1,37 @@
 <?php
 session_start();
+
+if (!isset($_SESSION['logged_in']) || !$_SESSION['logged_in']) {
+  header('Location: /robank/ATMLogin.php');
+}
+
+
+$conn = mysqli_connect("localhost", "root", "", "bank");
+
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+
+function list_accounts($account_type) {
+  global $conn;
+
+  $r = $_SESSION['cardnumber'];
+  $sql = "SELECT account, accountname FROM accounts where username LIKE (SELECT username FROM accounts WHERE cardnumber = '$r') AND type = '$account_type';";
+  $results = mysqli_query($conn, $sql);
+  if($results)
+  {
+    while($row = mysqli_fetch_assoc($results)){
+      // echo "<a href='/robank/ATMOptions.php?id=" . $row['account'] ."'>" . $row['accountname'] . "</a>";
+      ?>
+        <form action="/robank/ATMOptions.php" method="post">
+          <input type="hidden" name="account_id" value="<?= $row['account'] ?>">
+          <button type="submit"><?= $row['accountname'] ?></button>
+        </form>
+      <?php
+    }
+  }
+}
+
 ?>
 <html>
   <head>
@@ -33,20 +65,7 @@ session_start();
             <button class="dropbtn">Checking Account</button>
             <div class="dropdown-content">
               <?php
-              $conn = mysqli_connect("localhost", "root", "", "bank");
-            
-              if (!$conn) {
-                  die("Connection failed: " . mysqli_connect_error());
-              } 
-                $r = $_SESSION['cardnumber'];
-                $sql = "SELECT accountname FROM accounts where username LIKE (SELECT username FROM accounts WHERE cardnumber = '$r') AND type = 'checking';";
-                $results = mysqli_query($conn, $sql);
-                if($results)
-                {
-                  while($row = mysqli_fetch_assoc($results)){
-                    echo "<a href='/robank/ATMOptions.php'>" . $row['accountname'] . "</a>";
-                  }
-                }
+                list_accounts("checking");
               ?>
             </div>
           </div>
@@ -56,19 +75,7 @@ session_start();
             <button class="dropbtn">Savings Account</button>
             <div class="dropdown-content">
               <?php
-              $conn = mysqli_connect("localhost", "root", "", "bank");
-            
-              if (!$conn) {
-                  die("Connection failed: " . mysqli_connect_error());
-              }
-                $sql = "SELECT accountname FROM accounts where username LIKE (SELECT username FROM accounts WHERE cardnumber = '$r') AND type = 'savings';";
-                $results = mysqli_query($conn, $sql);
-                if($results)
-                {
-                  while($row = mysqli_fetch_assoc($results)){
-                  echo "<a href='/robank/ATMOptions.php'>" . $row['accountname'] . "</a>";
-                  }
-                }
+                list_accounts("savings");
               ?>
             </div>
           </div>

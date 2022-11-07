@@ -1,10 +1,10 @@
+
 <html>
   <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="styles.css">
     <title>Robank ATM Login</title>
   </head>
-
   <body>
 
 <!-- Top of bar box. Designed with CSS flexdispalays.  -->
@@ -24,8 +24,8 @@
     </div>
 
     <div class = "bottomBox">
-    
         <div class ="optionsPB">
+            <?= $_POST['account_id'] ?>
             <div><a href="/robank/ATMCashWithdaw.php" id="topcolortwo">
                 Cash Withdraw</a>
             </div>

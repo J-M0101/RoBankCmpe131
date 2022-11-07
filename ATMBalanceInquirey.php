@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <html>
   <head>
     <meta charset="UTF-8">
@@ -26,7 +30,22 @@
     <div class = "bottomBox">
     
         <div class ="depoInfo">
-            
+        <?php
+            $conn = mysqli_connect("localhost", "root", "", "bank");
+        
+            if (!$conn) {
+                die("Connection failed: " . mysqli_connect_error());
+            } 
+            $r = $_SESSION['cardnumber'];
+            $sql = "SELECT accountname FROM accounts where username LIKE (SELECT username FROM accounts WHERE cardnumber = '$r') AND type = 'checking';";
+            $results = mysqli_query($conn, $sql);
+            if($results)
+            {
+                while($row = mysqli_fetch_assoc($results)){
+                echo "<a href='/robank/ATMOptions.php'>" . $row['accountname'] . "</a>";
+                }
+            }
+        ?>
         </div>
 
     </div>
