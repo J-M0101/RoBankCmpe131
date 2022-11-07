@@ -26,7 +26,9 @@
     <div class = "bottomBox">
     
         <div class ="depoInfo">
-            
+            <!-- account ID for deposit function -->
+            <?= $_POST['account_id'] ?>
+            <!-- end  -->
         </div>
 
     </div>

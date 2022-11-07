@@ -26,17 +26,28 @@
     <div class = "bottomBox">
         <div class ="optionsPB">
             <?= $_POST['account_id'] ?>
-            <div><a href="/robank/ATMCashWithdaw.php" id="topcolortwo">
-                Cash Withdraw</a>
+            <div>
+                <form action="/robank/ATMCashWithdaw.php" method="post">
+                <input type="hidden" name="account_id" value="<?= $_POST['account_id']?>">
+                <button type="submit">Cash Withdraw</button>
+                </form>
             </div>
-            <div><a href="/robank/ATMDeposit.php" id="topcolortwo">
-                Deposit</a>
+            <div>
+                <form action="/robank/ATMDeposit.php" method="post">
+                <input type="hidden" name="account_id" value="<?= $_POST['account_id']?>">
+                <button type="submit">Deposit</button>
+                </form>
             </div>
-            <div><a href="/robank/ATMBalanceInquirey.php" id="topcolortwo">
-                Balance Inquirey </a>
+            <div>
+                <form action="/robank/ATMBalanceInquirey.php" method="post">
+                <input type="hidden" name="account_id" value="<?= $_POST['account_id']?>">
+                <button type="submit">Balance Inquirey</button>
+                </form>
             </div>
-            <div><a href="/robank/ATMTransfer.php" id="topcolortwo">
-                Transfer</a>
+            <div><form action="/robank/ATMTransfer.php" method="post">
+                <input type="hidden" name="account_id" value="<?= $_POST['account_id']?>">
+                <button type="submit">Transfer</button>
+                </form>
             </div>
         </div>
 

@@ -26,7 +26,7 @@
     <div class = "bottomBox">
     
         <div class ="depoInfo">
-            
+        <?= $_POST['account_id'] ?>
         </div>
 
     </div>

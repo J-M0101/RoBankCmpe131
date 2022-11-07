@@ -27,7 +27,9 @@
         
         <div class ="depoInfo">
           <form action="/action_page.php" method="get">
-
+            <!-- account ID for deposit function -->
+          <?= $_POST['account_id'] ?>
+          <!-- end -->
             <div class = "depoCenter">
               <label for="CardNumber">Deposit Amount:<br></label>
               <input type="text" id="CardNumber" name="CardNumber">
