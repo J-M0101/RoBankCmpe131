@@ -17,7 +17,7 @@
 
             //login user
             // $sql = "INSERT  creditcard (creditCardNumber, pin) VALUES ('$creditCardNumber', '$pin')";
-            $sql = "SELECT pin from users WHERE cardnumber = '$creditCardNumber'";
+            $sql = "SELECT pin from accounts WHERE cardnumber = '$creditCardNumber'";
             try{
                 $results = mysqli_query($conn, $sql);
             }

@@ -14,7 +14,7 @@
       </div>
       <div class = "buttonGroup">
         <div class = "rightBoxL">
-          <button class="toplink"><a href="/robank/accountInfo.php" id="topcolor">HOW TO USE?</a></button>
+          <button class="toplink"><a href="/robank/accountInfo.php" id="topcolor">How To Use</a></button>
         </div>
 
         <div class = "rightBoxR">
