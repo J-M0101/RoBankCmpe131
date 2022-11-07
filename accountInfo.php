@@ -32,9 +32,6 @@ session_start();
           <div class="dropdown">
             <button class="dropbtn">Checking Account</button>
             <div class="dropdown-content">
-              <!-- <a href="/robank/ATMOptions.php">Account 1</a>
-              <a href="/robank/ATMOptions.php">Account 2</a>
-              <a href="/robank/ATMOptions.php">Account 3</a> -->
               <?php
               $conn = mysqli_connect("localhost", "root", "", "bank");
             
@@ -44,7 +41,6 @@ session_start();
                 $r = $_SESSION['cardnumber'];
                 $sql = "SELECT accountname FROM accounts where username LIKE (SELECT username FROM accounts WHERE cardnumber = '$r') AND type = 'checking';";
                 $results = mysqli_query($conn, $sql);
-                // $row = mysqli_fetch_assoc($results);
                 if($results)
                 {
                   while($row = mysqli_fetch_assoc($results)){
@@ -65,10 +61,8 @@ session_start();
               if (!$conn) {
                   die("Connection failed: " . mysqli_connect_error());
               }
-              // $r = $_SESSION['cardnumber'];
                 $sql = "SELECT accountname FROM accounts where username LIKE (SELECT username FROM accounts WHERE cardnumber = '$r') AND type = 'savings';";
                 $results = mysqli_query($conn, $sql);
-                // $row = mysqli_fetch_assoc($results);
                 if($results)
                 {
                   while($row = mysqli_fetch_assoc($results)){
