@@ -23,10 +23,12 @@ function list_accounts($account_type) {
     while($row = mysqli_fetch_assoc($results)){
       // echo "<a href='/robank/ATMOptions.php?id=" . $row['account'] ."'>" . $row['accountname'] . "</a>";
       ?>
-        <form action="/robank/ATMOptions.php" method="post">
-          <input type="hidden" name="account_id" value="<?= $row['account'] ?>">
-          <button type="submit"><?= $row['accountname'] ?></button>
-        </form>
+        <div class = "test">
+          <form action="/robank/ATMOptions.php" method="post">
+            <input type="hidden" name="account_id" value="<?= $row['account'] ?>">
+            <button class = "toplinkone"type="submit"><?= $row['accountname'] ?></button>
+          </form>
+        </div>
       <?php
     }
   }
