@@ -190,13 +190,13 @@ table td {
 .dropdown-content {
   display: none;
   background-color: #014421;
-  /* min-width: 160px; */
+  min-width: 160px;
   border-radius: 2rem;
   width: 50rem;
   height: 9rem;
 }
 
-.test{
+.one{
   display: flex;
   justify-content: center;
 }
@@ -241,9 +241,6 @@ table td {
   border-radius: 2rem;
   border-bottom: 1.3rem solid #013220;
   border-right: 1rem solid #013220;
-  
-  /* margin-top: 80px; */
-  /* margin-bottom: 25px; */
 }
 
 .depoInfo{
