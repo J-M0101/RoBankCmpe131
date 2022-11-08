@@ -1,5 +1,36 @@
 <?php
 session_start();
+
+if (!isset($_SESSION['logged_in']) || !$_SESSION['logged_in']) {
+  header('Location: /robank/ATMLogin.php');
+}
+
+
+$conn = mysqli_connect("localhost", "root", "", "bank");
+
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+
+$b = $_POST['account_id'];
+
+function list_balance($b) {
+    global $conn;
+
+    $sql = "SELECT balance FROM accounts where account = $b";
+    
+    try{
+        $results = mysqli_query($conn, $sql);
+        if($results){
+            while($balance= mysqli_fetch_assoc($results)){
+                echo $balance['balance'];
+            }  
+        }
+    }catch (Exception $e) {
+        $error_message = "Failed query of creditCardNumber and pin";
+    }
+
+}
 ?>
 
 <html>
@@ -30,7 +61,12 @@ session_start();
     <div class = "bottomBox">
     
         <div class ="depoInfo">
-        <?= $_POST['account_id'] ?>
+        <!-- <?= $_POST['account_id'] ?> -->
+            <div class = "topboxbalance">
+                <div class = "topboxbalanceleft">Your Balance:</div>
+                <div class = "topboxbalanceright"><?= list_balance($b) ?></div>
+            </div>
+            <div class = "middleboxbalance"></div>
         </div>
 
     </div>

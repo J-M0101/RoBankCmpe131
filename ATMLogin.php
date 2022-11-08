@@ -4,46 +4,46 @@
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       if (isset($_POST["CardNumber"]) && isset($_POST["pin"])) 
       {   
-          $creditCardNumber = $_POST["CardNumber"];
-          $pin = $_POST["pin"];
+        $creditCardNumber = $_POST["CardNumber"];
+        $pin = $_POST["pin"];
 
-          // Create connection
-          $conn = mysqli_connect("localhost", "root", "", "bank");
-          
-          if (!$conn) {
-              die("Connection failed: " . mysqli_connect_error());
-          }
+        // Create connection
+        $conn = mysqli_connect("localhost", "root", "", "bank");
+        
+        if (!$conn) {
+            die("Connection failed: " . mysqli_connect_error());
+        }
 
-          //login user
-          // $sql = "INSERT  creditcard (creditCardNumber, pin) VALUES ('$creditCardNumber', '$pin')";
-          $sql = "SELECT pin, username from accounts WHERE cardnumber = '$creditCardNumber'";
-          try{
-              $results = mysqli_query($conn, $sql);
+        //login user
+        // $sql = "INSERT  creditcard (creditCardNumber, pin) VALUES ('$creditCardNumber', '$pin')";
+        $sql = "SELECT pin, username from accounts WHERE cardnumber = '$creditCardNumber'";
+        try{
+            $results = mysqli_query($conn, $sql);
 
-              if ($results) { 
-                $row = mysqli_fetch_assoc($results);
+            if ($results) { 
+              $row = mysqli_fetch_assoc($results);
 
-                if ( $row["pin"] === $pin ) 
-                {
-                    $_SESSION['logged_in'] = true;
-                    $_SESSION['cardnumber'] = $_POST["CardNumber"];
-                    // TODO: cache username so you don't have to make hella subquries
-                    // $_SESSION['username'] = "SELECT username FROM accounts where cardnumber = '$r'"
-                    // echo "Successful login";
-                    header("Location: accountInfo.php");
-                }
-                else
-                {
-                    $error_message = 'Incorrect Password';
-                }
+              if ( $row["pin"] === $pin ) 
+              {
+                  $_SESSION['logged_in'] = true;
+                  $_SESSION['cardnumber'] = $_POST["CardNumber"];
+                  // TODO: cache username so you don't have to make hella subquries
+                  // $_SESSION['username'] = "SELECT username FROM accounts where cardnumber = '$r'"
+                  // echo "Successful login";
+                  header("Location: accountInfo.php");
+              }
+              else
+              {
+                  $error_message = 'Incorrect Password';
+              }
             } 
-            else {
-                $error_message = "Failed Login";
-            }
+          else {
+              $error_message = "Failed Login";
           }
-          catch (Exception $e) {
-              $error_message = "Failed query of creditCardNumber and pin";
-          }
+        }
+        catch (Exception $e) {
+            $error_message = "Failed query of creditCardNumber and pin";
+        }
       }
       else
       {
@@ -92,7 +92,7 @@
             <p><?= $error_message ?></p>
             <?php
            }
-          ?>
+            ?>
             <!-- <p class="atmLogin">ATM LOGIN</p> -->
             <form action="ATMLogin.php" method="post">
               <label for="CardNumber">Card Number:<br></label>

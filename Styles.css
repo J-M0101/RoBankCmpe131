@@ -190,10 +190,7 @@ table td {
 .dropdown-content {
   display: none;
   background-color: #014421;
-  min-width: 160px;
   border-radius: 2rem;
-  width: 50rem;
-  height: 9rem;
 }
 
 .one{
@@ -274,7 +271,31 @@ table td {
   margin-bottom: 4rem;
 }
 
+
 #topcolortwo{
   text-decoration: none;
   color: white;
+}
+
+.topboxbalance{
+  display: flex;
+  flex-direction: row;
+  padding-block-end: 2rem;
+  
+}
+
+.topboxbalanceleft{
+  display: flex;
+  padding-inline-end: 1.2rem;
+  font-size: 4rem;
+}
+
+.topboxbalanceright{
+  display: flex;
+  color: white;
+  font-size: 4rem;
+}
+
+.middleboxbalance{
+  display: flex;  
 }
