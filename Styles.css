@@ -253,6 +253,7 @@ table td {
   font-size: 2rem;
   border-bottom: 1.3rem solid #013220;
   border-right: 1rem solid #013220;
+  
 }
 
 
@@ -286,7 +287,6 @@ table td {
 
 .topboxbalanceleft{
   display: flex;
-  padding-inline-end: 1.2rem;
   font-size: 4rem;
 }
 
@@ -298,4 +298,10 @@ table td {
 
 .middleboxbalance{
   display: flex;  
+}
+
+.submitBtnone{
+  display: flex;
+  justify-content: center;
+  margin-top: rem;
 }
