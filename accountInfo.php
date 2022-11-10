@@ -34,6 +34,21 @@ function list_accounts($account_type) {
   }
 }
 
+function list_account_name(){
+  global $conn;
+
+  $r = $_SESSION['cardnumber'];
+  $sql = "SELECT username FROM accounts WHERE cardnumber = $r;";
+  $results = mysqli_query($conn, $sql);
+  if($results){
+    while($row = mysqli_fetch_assoc($results)){
+      $an = $row['username'];
+      echo $an;
+    }
+  }
+}
+
+
 ?>
 <html>
   <head>
@@ -62,6 +77,9 @@ function list_accounts($account_type) {
 
     <div class = "parentBox">
       <div class = "lowerBackdrop">
+        <div class = "checkingsaccount">
+          Hello, <?= list_account_name() ?>
+        </div>
         <div class = "checkingsaccount">
           <div class="dropdown">
             <button class="dropbtn">Checking Account</button>

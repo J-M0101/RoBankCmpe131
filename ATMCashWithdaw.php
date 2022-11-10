@@ -26,9 +26,19 @@
     <div class = "bottomBox">
     
         <div class ="depoInfo">
-            <!-- account ID for deposit function -->
-            <?= $_POST['account_id'] ?>
-            <!-- end  -->
+            <!-- <?= $_POST['account_id'] ?> -->
+            <div class = "topboxbalance">
+                <div class = "topboxbalanceleft">Enter Withdraw Amount</div>
+            </div>
+            <div class = "topboxbalance">
+                <form action="#" method="post">
+                <label for="amountentered"></label>
+                <input type="text" id="amountentered"  name="amountentered"><br><br>
+                <div class="submitBtnone">
+                <input type="submit" value="Submit">
+            </div>
+            </form>
+        </div>
         </div>
 
     </div>
