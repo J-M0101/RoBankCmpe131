@@ -1,3 +1,12 @@
+<?php
+  session_start();
+  $username = "$_SESSION[username]";
+  /*
+  have session_start(); on every page. $_SESSION[username] is saved when logged in, need for many functions
+  We'll put the username back into $username, easier to use.
+  */
+ ?>
+
 <html>
   <head>
     <meta charset="UTF-8">
@@ -52,43 +61,12 @@
 
             .dropdown:hover .dropbtn {background-color: #3e8e41;}
             </style>
-
-            <div class="dropdown">
-              <button class="dropbtn" id="topcolor">Checking Account: xxxx-xxxx-xxxx-7890</button>
-              <div class="dropdown-content">
-                <a href="#">Checking Account: xxxx-xxxx-xxxx-1246</a>
-                <a href="#">Saving Account: xxxx-xxxx-xxxx-6343</a>
-                <a href="#">Saving Account: xxxx-xxxx-xxxx-6844</a>
-              </div>
-            </div>
-
-            <div class = "rightBoxR">
-              <button class="toplink"><a href="ATMLogin.html" id="topcolor">LOGOUT</a></button>
-            </div>
-          </div>
-      </div>
-
-      <div class = "centerBoxDisplayBalance">
-        <h1><FONT COLOR=black>Your Available Balance: $150,352</h1>
-      </div>
-
-      <div class = "bottomBox">
-        <div class = "centerBox3">
-          <div class = "centerTab">
-            <h2>How can we help today?</h2>
-          </div>
-          <div class = "centerButtons">
-            <button class="centerButtons"><a href="accountLogin.html" id="topcolor">Transfer Funds</a></button>
-          </div>
-          <div class = "centerButtons">
-            <button class="centerButtons"><a href="accountLogin.html" id="topcolor">Create Checking/Saving Account</a></button>
-          </div>
-          <div class = "centerButtons">
-            <button class="centerButtons"><a href="accountLogin.html" id="topcolor">View All Balances</a></button>
-          </div>
-        </div>
       </div>
     </div>
+<!-- Top of bar box. Designed with CSS flexdispalays.  -->
+    Your accout has been deleted!
+    <div class = "centerButtons">
+      <button class="centerButtons"><a href="accountMain.php" id="topcolor">Account</a></button>
+    </div>
 
-  </body>
-</html>
+    </html>

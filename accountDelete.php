@@ -66,39 +66,39 @@
 
 <!-- Delete Account php code here  -->
 
-          <?php
-            {
-            echo "Please select an account to delete.<BR>";
 
-          }
-            ?>
+<?php
+/*
+$conn = mysqli_connect("localhost", "root", "", "bank");
+$sql = "SELECT * FROM `accounts` WHERE `username`='$username'  ";
+$result = $conn->query($sql);
+echo "<BR>DEBUG:<BR>";
+foreach($result as $row) {
+  echo $row["account"]."<BR>";
+}
+*/
+?>
+
             <form id="form1" name="form1" method="post" action="<?php echo $PHP_SELF; ?>">
-                        Account List :
-                        <select Account='NEW'>
-                        <option value="">--- Select ---</option>
-                        <?
-                          $conn = mysqli_connect("localhost", "root", "", "bank");
-                          $sql = "SELECT * FROM `accounts` WHERE `username`='$username' ";
-                          $result = $conn->query($sql);
-                          while ($row = mysqli_fetch_assoc($result)):{;
-                            /*
-                        while($row_list=mysql_fetch_assoc($sql)){
-                        */
-                            ?>
-                            <option value="<?php echo $row["account"];
-                              // The value we usually set is the primary key
-                          ?>">
-                            <?php echo $row["account"];
-                              // To show the category name to the user
-                                ?>
-                                </option>
-                                <?
-                              endwhile;
-                              ?>
-                            }
-                        </select>
-                        <input type="submit" name="Submit" value="Select" />
-                    </form>
+
+                        <form method="post" action="accountDelete.php">
+                            <h3>Account List:</h3>
+                            Please select an account to delete.
+                            <BR>
+                            <select name="account">
+
+                              <?php
+                              $conn = mysqli_connect("localhost", "root", "", "bank");
+                              $sql = "SELECT * FROM `accounts` WHERE `username`='$username'  ";
+                              $result = $conn->query($sql);
+                              foreach($result as $row){?>
+                                <option value="<?php echo $row['account']; ?>"><?php echo $row['account'].", balance:". $row['balance']; ?></option>
+                              <?php }?>
+                            </select>
+                        <input type="submit" name="delete" value="Delete this Account ">
+                        </form>
+
+<!-- Return to menu  -->
 
                     <div class = "centerButtons">
                       <button class="centerButtons"><a href="accountMain.php" id="topcolor">Account</a></button>

@@ -24,8 +24,13 @@
         $row = mysqli_fetch_assoc($results);
         if ($row["password"] === $password) {
           $logged_in = true;
+          $_SESSION["username"]=$username;
           $_SESSION['username']=$username;
+          $_SESSION['username']='$username';
+          $_SESSION['username']="$username";
+          /*
           $_SESSION['logged_in'] = true;
+          */
           $sql = "SELECT * FROM users";
           $results = mysqli_query($conn, $sql);
 
@@ -83,10 +88,14 @@
       <tbody>
         <?php
           if ($logged_in && $results){
+            session_start();
             $conn = mysqli_connect("localhost", "root", "", "bank");
-            $sql = "SELECT * FROM `users` WHERE `username`='$username'  ";
+            $sql = "SELECT * FROM `users` WHERE `username`='$username'";
             $result = $conn->query($sql);
+            $_SESSION["username"]=$username;
             $_SESSION['username']=$username;
+            $_SESSION['username']='$username';
+            $_SESSION['username']="$username";
             foreach($result as $row) {
               echo "<td>" . $row["username"] . "</td>";
               echo "<td>" . $row["firstname"] . "</td>";

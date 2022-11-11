@@ -1,10 +1,6 @@
 <?php
   session_start();
   $username = "$_SESSION[username]";
-  /*
-  have session_start(); on every page. $_SESSION[username] is saved when logged in, need for many functions
-  We'll put the username back into $username, easier to use.
-  */
  ?>
 
 <html>
@@ -66,9 +62,33 @@
 
 
 
-    <div class = "centerButtons">
-      <button class="centerButtons"><a href="accountMain.php" id="topcolor">Account</a></button>
-    </div>
+          <?php
+            {
+            $conn = mysqli_connect("localhost", "root", "", "bank");
+            $username = "$_SESSION[username]";
+            $rand = rand(1,99999999);
+            $sql = "INSERT INTO `accounts` (`account`, `type`, `username`, `balance`, `cardnumber`, `pin`) VALUES ('$rand', 'savings', '$username', '0', '0', '0')";
+            $result = $conn->query($sql);
+
+            echo "<BR> A new checking account has been created:   ". $rand;
+
+            /*
+            echo "<BR>username: " . $username;
+            foreach($result as $row) {
+              echo "<div class ='centerBoxDisplayBalance'>";
+              echo "<h1><FONT COLOR=black>Balance: $" . $row["balance"] . ", " . $row["type"] . " account xxxx-xxxx-xxxx-" .substr($row["account"],-4);
+              echo "</div>";
+              echo "<div class = 'centerTab'>";
+
+              echo "</div>";
+            }
+            */
+          }
+          ?>
+
+          <div class = "centerButtons">
+            <button class="centerButtons"><a href="accountMain.php" id="topcolor">Account</a></button>
+          </div>
 
 
     </html>

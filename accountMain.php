@@ -106,13 +106,13 @@
 
           </div>
           <div class = "centerButtons">
-            <button class="centerButtons"><a href="accountLogin.html" id="topcolor">Transfer Funds</a></button>
+            <button class="centerButtons"><a href="accountTransfer.php" id="topcolor">Transfer Funds</a></button>
           </div>
           <div class = "centerButtons">
-            <button class="centerButtons"><a href="createAccount.php" id="topcolor">Create Checking/Saving Account</a></button>
+            <button class="centerButtons"><a href="accountCreate.php" id="topcolor">Create Checking/Saving Account</a></button>
           </div>
           <div class = "centerButtons">
-            <button class="centerButtons"><a href="deleteAccount.php" id="topcolor">Delete Checking/Saving Account</a></button>
+            <button class="centerButtons"><a href="accountDelete.php" id="topcolor">Delete Checking/Saving Account</a></button>
           </div>
           <div class = "centerButtons">
             <button class="centerButtons"><a href="accountInfo.php" id="topcolor">Account Information</a></button>
