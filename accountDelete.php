@@ -79,13 +79,13 @@ foreach($result as $row) {
 */
 ?>
 
-            <form id="form1" name="form1" method="post" action="<?php echo $PHP_SELF; ?>">
-
-                        <form method="post" action="accountDelete.php">
+            <form id="accountdelete" name="accountdelete" method="post" action="accountDeleted.php">
+              <div id="accountdelete">
+                        <!--<form method="post" action="accountDeleted.php">-->
                             <h3>Account List:</h3>
                             Please select an account to delete.
                             <BR>
-                            <select name="account">
+                            <select name="accountdelete">
 
                               <?php
                               $conn = mysqli_connect("localhost", "root", "", "bank");
@@ -96,7 +96,14 @@ foreach($result as $row) {
                               <?php }?>
                             </select>
                         <input type="submit" name="delete" value="Delete this Account ">
+                        </div>
                         </form>
+
+
+
+<!--DELETE FROM `accounts` WHERE `account` = $accountdelete -->
+
+
 
 <!-- Return to menu  -->
 

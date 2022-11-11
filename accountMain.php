@@ -89,7 +89,7 @@
         $result = $conn->query($sql);
         foreach($result as $row) {
           echo "<div class ='centerBoxDisplayBalance'>";
-          echo "<h1><FONT COLOR=black>Balance: $" . $row["balance"] . ", " . $row["type"] . " account xxxx-xxxx-xxxx-" .substr($row["account"],-4);
+          echo "<h1><FONT COLOR=black>Balance: $" . $row["balance"] . ", " .$row["accountname"]." " . $row["type"] . " account xxxx-xxxx-xxxx-" .substr($row["account"],-4);
           echo "</div>";
           echo "<div class = 'centerTab'>";
           echo "</div>";
@@ -115,7 +115,7 @@
             <button class="centerButtons"><a href="accountDelete.php" id="topcolor">Delete Checking/Saving Account</a></button>
           </div>
           <div class = "centerButtons">
-            <button class="centerButtons"><a href="accountInfo.php" id="topcolor">Account Information</a></button>
+            <button class="centerButtons"><a href="accountInformation.php" id="topcolor">Account Information</a></button>
           </div>
           <div class = "centerButtons">
             <button class="centerButtons"><a href="accountLogin.html" id="topcolor">View All Balances</a></button>

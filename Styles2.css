@@ -208,6 +208,7 @@ body{
   height: 5rem;
   /* justify-content: center; */
   background-color: white;
+  border-radius: 10px;
 }
 
 /* ------------------------- */

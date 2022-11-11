@@ -67,12 +67,11 @@
     <H3> Account Transfer </H3>
     <BR>
 
-      <form id="form1" name="form1" method="post" action="<?php echo $PHP_SELF; ?>">
-
-                  <form method="post" action="accountDelete.php">
-                    Transfer out of this Account
+      <form id="accountfrom" name="accountfrom" method="post" action="accountTransferred.php">
+        <div id="accountfrom">
+                      Please select an account to trasfer funds from.
                       <BR>
-                      <select name="accountdown">
+                      <select name="accountfrom">
 
                         <?php
                         $conn = mysqli_connect("localhost", "root", "", "bank");
@@ -82,29 +81,30 @@
                           <option value="<?php echo $row['account']; ?>"><?php echo $row['account'].", balance:". $row['balance']; ?></option>
                         <?php }?>
                       </select>
-                  </form>
-
+                  </div>
                   <BR>
 
-                  <form id="form1" name="form1" method="post" action="<?php echo $PHP_SELF; ?>">
+                    <form id="accountinto" name="accountinto" method="post" action="accountTransferred.php">
+                      <div id="accountinto">
+                                    Please select an account to transfer funds into.
+                                    <BR>
+                                    <select name="accountinto">
 
-                              <form method="post" action="accountDelete.php">
-                                  Trasnfer into this Account
-                                  <BR>
-                                  <select name="accountup">
+                                      <?php
+                                      $conn = mysqli_connect("localhost", "root", "", "bank");
+                                      $sql = "SELECT * FROM `accounts` WHERE `username`='$username'  ";
+                                      $result = $conn->query($sql);
+                                      foreach($result as $row){?>
+                                        <option value="<?php echo $row['account']; ?>"><?php echo $row['account'].", balance:". $row['balance']; ?></option>
+                                      <?php }?>
+                                    </select>
+                                    <BR>
 
-                                    <?php
-                                    $conn = mysqli_connect("localhost", "root", "", "bank");
-                                    $sql = "SELECT * FROM `accounts` WHERE `username`='$username'  ";
-                                    $result = $conn->query($sql);
-                                    foreach($result as $row){?>
-                                      <option value="<?php echo $row['account']; ?>"><?php echo $row['account'].", balance:". $row['balance']; ?></option>
-                                    <?php }?>
-                                  </select>
-
-                          </form>
-
-                          <input type="submit" name="delete" value="Trasnfer Funds">
+                                      <BR>
+                                        <input type="text" name = "ammount">
+                                <input type="submit" name="transfer" value="Transfer funds">
+                                </div>
+                                </form>
 
 
 

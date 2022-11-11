@@ -68,15 +68,23 @@
 
 
     <?php
-      $selected = $_POST['accountdelete'];
-      echo "Account: ". $selected . " has been deleted.<BR>";
+      $from = $_POST['accountfrom'];
+      $into = $_POST['accountinto'];
+      $ammount = $_POST['ammount'];
+      echo "The account to transfer form: ".$from."<BR>";
+      echo "The account to transfer form: ".$into."<BR>";
+      echo "Ammount to transfer: ".$ammount."<BR>";
       $conn = mysqli_connect("localhost", "root", "", "bank");
-      $sql = "DELETE FROM `accounts` WHERE `account` = '$selected'";
+      $sql = "UPDATE `accounts` SET `balance`=`balance` - $ammount WHERE `account` = $from";
       $result = $conn->query($sql);
+
+      $sql = "UPDATE `accounts` SET `balance`=`balance` + $ammount WHERE `account` = $into";
+      $result = $conn->query($sql);
+
+
     ?>
-    
-    <BR>
-    The remaining balance in this account has been mailed to your address.
+
+    Your funds have been transferred!
 
     <div class = "centerButtons">
       <button class="centerButtons"><a href="accountMain.php" id="topcolor">Account</a></button>
