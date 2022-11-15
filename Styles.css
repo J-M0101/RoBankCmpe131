@@ -305,3 +305,35 @@ table td {
   justify-content: center;
   margin-top: rem;
 }
+
+.useraccount{
+  display: flex;
+  align-self:center;
+  align-items: center;
+  width: 70rem;
+  height: 50rem;
+  justify-content: center;
+  background-color: #014421;
+  flex-direction: column;
+  border-radius: 2rem;
+  border-bottom: 1.3rem solid #013220;
+  border-right: 1rem solid #013220;
+}
+
+.box{
+  display: flex;
+  margin-top: 1.3rem;
+  margin-bottom: 1.3rem;
+  align-items: center;
+  justify-content:end;
+  font-size:3rem;
+}
+
+.boxcenter{
+  display: flex;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  align-items: center;
+  justify-content:center;
+  font-size: xx-large;
+}
