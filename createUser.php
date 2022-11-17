@@ -1,5 +1,4 @@
 <?php
-session_start();
   if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (isset($_POST["username"]) && isset($_POST["password"]) && isset($_POST["firstname"]) && isset($_POST["lastname"]) && isset($_POST["phone"]) && isset($_POST["email"]) && isset($_POST["address"])) 
     {   
@@ -20,7 +19,7 @@ session_start();
 
       //login user
       // $sql = "INSERT  creditcard (creditCardNumber, pin) VALUES ('$creditCardNumber', '$pin')";
-      $sql = "INSERT INTO users (username, password, firstname, lastname, phone, email, address) VALUES ('$username', '$password', '$firstname', '$lastname', '$phone', '$email', '$address')";
+      $sql = "INSERT INTO users (username, password, firstname, lastname, phone, email, address) VALUES ('$username', '$password', '$firstname', '$lastname', '$phone', '$email', '$address');";
       $results = mysqli_query ($conn, $sql);
 
       if ($results){
@@ -66,7 +65,7 @@ session_start();
         <div class = "box">
         CREATE AN ACCOUNT
         </div>
-        <form action="/robank/accountLogin.html" method="post">
+        <form action="#" method="post">
             <div class = "box">
             <label>Email: </label>
             <input type="email" name="email"
@@ -111,7 +110,7 @@ session_start();
                         required/>
             </div><br>
             <div class = "boxcenter">
-              <input type="submit"> <!-- on submit save the entered fields into variables and then send the user to personal information collection page-->
+              <input type="submit" value="Submit"> <!-- on submit save the entered fields into variables and then send the user to personal information collection page-->
             </div>
         </form>
       </div>
