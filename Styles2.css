@@ -6,9 +6,10 @@ body, html {
   height: 100%;
   font-family: Arial;
   color: white;
-  background-image: url('TestBackground.jpeg');
+  background-image: url('TestBackgroundColor.jpeg');
   background-repeat: no-repeat;
   background-size: cover;
+  background-position-y: center;
 }
 
 body{
@@ -168,23 +169,6 @@ body{
   color: white;
 }
 
-.centerList{
-  display: flex;
-  /* align-self:center; */
-  align-items: stretch;
-  align-self: center;
-  height: auto;
-  width: 80rem;
-  background-color: #014421;
-  color: white;
-  flex-direction: column;
-  /* justify-content: center; */
-  text-align: left;
-  float: center;
-  border: none;
-  font-size: 25px;
-}
-
 /* Page 2 */
 
 .parentBox{
@@ -224,6 +208,7 @@ body{
   height: 5rem;
   /* justify-content: center; */
   background-color: white;
+  border-radius: 10px;
 }
 
 /* ------------------------- */

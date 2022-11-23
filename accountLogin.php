@@ -1,4 +1,5 @@
 <?php
+  session_start();
   $logged_in = false;
 
   if (isset($_POST["username"]) && isset ($_POST["password"])){
@@ -23,8 +24,16 @@
         $row = mysqli_fetch_assoc($results);
         if ($row["password"] === $password) {
           $logged_in = true;
+          $_SESSION["username"]=$username;
+          $_SESSION['username']=$username;
+          $_SESSION['username']='$username';
+          $_SESSION['username']="$username";
+          /*
+          $_SESSION['logged_in'] = true;
+          */
           $sql = "SELECT * FROM users";
           $results = mysqli_query($conn, $sql);
+
         } else {
           echo "password incorrect";
         }
@@ -44,7 +53,7 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <!-- <link rel="stylesheet" href="styles.css">  -->
+    <link rel="stylesheet" href="styles2.css">
     <title>Robank Web Login</title>
   </head>
   <body>
@@ -68,28 +77,22 @@
 
 <!-- Login and display backend  -->
     <h1>Login Page</h1>
-    <form action = "/admin.php" method="post">
+    <!--<form action = "/admin.php" method="post">-->
+    <form action = "/accountLogin.php" method="post">
       <input type="text" name="username">
       <input type="password" name="password">
       <input type="submit">
     </form>
     <table>
-      <thead>
-        <tr>
-          <th>username</th>
-          <th>firstname</th>
-          <th>lastname</th>
-          <th>phone</th>
-          <th>email</th>
-          <th>address</th>
-        </tr>
-      </thead>
+
       <tbody>
         <?php
           if ($logged_in && $results){
             $conn = mysqli_connect("localhost", "root", "", "bank");
-            $sql = "SELECT * FROM `users` WHERE `username`='$username'  ";
+            $sql = "SELECT * FROM `users` WHERE `username`='$username'";
             $result = $conn->query($sql);
+            $_SESSION["username"]=$username;
+            /*
             foreach($result as $row) {
               echo "<td>" . $row["username"] . "</td>";
               echo "<td>" . $row["firstname"] . "</td>";
@@ -97,7 +100,8 @@
               echo "<td>" . $row["phone"] . "</td>";
               echo "<td>" . $row["email"] . "</td>";
               echo "<td>" . $row["address"] . "</td>";
-            }
+            }*/
+            echo "<button class='toplink'><a href='accountMain.php' id='topcolor'>Click Here to go to accounts</a></button><BR><BR>";
           }
         ?>
       </tbody>
@@ -108,6 +112,8 @@
           $conn = mysqli_connect("localhost", "root", "", "bank");
           $sql = "SELECT * FROM `accounts` WHERE `username`='$username'  ";
           $result = $conn->query($sql);
+          echo "This login page is not working right now, but username is stored in session. go to /localhost/accountMain.php manually<BR>";
+          echo "Or click above button<BR>";
           foreach($result as $row) {
             echo "<BR>";
             echo "<td>xxxx" . $row["account"] . "   </td>";
