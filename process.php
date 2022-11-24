@@ -38,12 +38,18 @@
                         if (($_POST["username"]) && ($_POST["password"])){
                           $username = $_POST["username"];
                           $password = $_POST["password"];
+                          $firstname = $_POST["firstname"];
+                          $lastname = $_POST["lastname"];
+                          $phone = $_POST["phone"];
+                          $email = $_POST["email"];
+                          $address = $_POST["address"];
+
                           //echo "Username from registration: " . $_POST["username"];
                           //echo "<BR>";
                           //echo "Password from registration: " . $_POST["password"];
 
                           // create connection
-                          $conn = mysqli_connect("localhost", "root", "", "users");
+                          $conn = mysqli_connect("localhost", "root", "", "bank");
 
                           // check connection
                           if (!$conn){
@@ -51,7 +57,7 @@
                           }
 
                           // register user
-                          $sql = "INSERT INTO students (username, password) VALUES ('$username', '$password')";
+                          $sql = "INSERT INTO users (username, password, firstname, lastname, phone, email, address) VALUES ('$username', '$password', '$firstname', '$lastname', '$phone', '$email', '$address')";
 
                           $results = mysqli_query ($conn, $sql);
 
