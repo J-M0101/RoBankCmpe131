@@ -16,12 +16,12 @@
       }
 
       // select user
-      $sql = "SELECT password FROM users WHERE username = 'admin'";
+      $sql = "SELECT password FROM users WHERE username LIKE 'admin%'";
       $results = mysqli_query($conn, $sql);
 
       if ($results) {
         $row = mysqli_fetch_assoc($results);
-        if ($row["password"] === $password) {
+        if ($row["password"] === $password && $username === 'admin') {
           $logged_in = true;
           $sql = "SELECT * FROM users";
           $results  = mysqli_query($conn, $sql);
@@ -47,7 +47,7 @@
    </head>
    <body>
      <h1>Admin panel</h1>
-     <form class="" action="/admin.php" method="post">
+     <form class="" action="admin.php" method="post">
        <input type="text" name="username">
        <input type="password" name="password">
        <input type="submit">
