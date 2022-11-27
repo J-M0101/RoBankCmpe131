@@ -12,18 +12,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             die("Connection failed: " . mysqli_connect_error());
         }
 
-        $sql = "SELECT balance FROM accounts WHERE account = '$accountnumber';";
-        $results = mysqli_query($conn, $sql);
-        if($results){
-            $row = mysqli_fetch_assoc($results);
-            
-            while($row = mysqli_fetch_assoc($results)){
-                // $balance = $row['balance'];
-                if($total_amount)
-                {
-                    $total_amount = $accountnumber - $useramount;
+        function list_balance($accountnumber) {
+            global $conn;
+
+            $sql = "SELECT balance FROM accounts WHERE account = '$accountnumber';";
+            $results = mysqli_query($conn, $sql);
+            if($results){
+                $row = mysqli_fetch_assoc($results);
+                
+                while($row = mysqli_fetch_assoc($results)){
+                    $balance = $row['balance'];
                 }
             }
+
         }
     }
     else
@@ -62,12 +63,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <div class = "bottomBox">
     
         <div class ="depoInfo">
-            <?= $_POST["account_id"]?>
+            <!-- <?= $_POST["account_id"]?> -->
             <div class = "topboxbalance">
                 <div class = "topboxbalanceleft">Enter Withdraw Amount</div>
             </div>
             <div class = "topboxbalance">
-                <form action="accountInfo.php" method="post">
+                <form action="Test.php" method="post">
                 <label for="amountentered"></label>
                 <input type="number" id="amountentered"  name="amountentered"><br><br>
                 <div class="submitBtnone">
