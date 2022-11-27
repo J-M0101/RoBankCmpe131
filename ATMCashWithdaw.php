@@ -13,10 +13,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
 
         $sql = "SELECT balance FROM accounts WHERE account = '$accountnumber';";
-        
         $results = mysqli_query($conn, $sql);
         if($results){
             $row = mysqli_fetch_assoc($results);
+            
             while($row = mysqli_fetch_assoc($results)){
                 // $balance = $row['balance'];
                 if($total_amount)
