@@ -169,23 +169,6 @@ body{
   color: white;
 }
 
-.centerList{
-  display: flex;
-  /* align-self:center; */
-  align-items: stretch;
-  align-self: center;
-  height: auto;
-  width: 80rem;
-  background-color: #014421;
-  color: white;
-  flex-direction: column;
-  /* justify-content: center; */
-  text-align: left;
-  float: center;
-  border: none;
-  font-size: 25px;
-}
-
 /* Page 2 */
 
 .parentBox{
