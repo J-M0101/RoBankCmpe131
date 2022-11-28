@@ -47,7 +47,7 @@
    </head>
    <body>
      <h1>Admin panel</h1>
-     <form class="" action="admin.php" method="post">
+     <form class="" action="admin.html" method="post">
        <input type="text" name="username">
        <input type="password" name="password">
        <input type="submit">
