@@ -1,9 +1,7 @@
 <?php
 session_start();
 
-if (!isset($_SESSION['logged_in']) || !$_SESSION['logged_in']) {
-    header('Location: ATMLogin.php');
-  }
+  if ($_SERVER['REQUEST_METHOD'] === 'POST'){
   
   $username = $_SESSION['username'];
   $conn = mysqli_connect("localhost", "root", "", "bank");
@@ -11,8 +9,26 @@ if (!isset($_SESSION['logged_in']) || !$_SESSION['logged_in']) {
   if (!$conn) {
       die("Connection failed: " . mysqli_connect_error());
   }
-  
 
+  if (isset($_POST["accountfrom"]) && isset($_POST["accountinto"]) && isset($_POST["ammount"])){
+    $from = $_POST['accountfrom'];
+    $into = $_POST['accountinto'];
+    $ammount = $_POST['ammount'];
+    echo "The account to transfer form: ".$from."<BR>";
+    echo "The account to transfer form: ".$into."<BR>";
+    echo "Ammount to transfer: ".$ammount."<BR>";
+    $conn = mysqli_connect("localhost", "root", "", "bank");
+    $sql = "UPDATE `accounts` SET `balance`=`balance` - $ammount WHERE `account` = $from";
+    $result = $conn->query($sql);
+
+    $sql = "UPDATE `accounts` SET `balance`=`balance` + $ammount WHERE `account` = $into";
+    $result = $conn->query($sql);
+
+    if($result){
+      header("Location: accountInfo.php");
+    }
+  }
+}  
 ?>
 
 <html>
@@ -39,7 +55,7 @@ if (!isset($_SESSION['logged_in']) || !$_SESSION['logged_in']) {
         <div class = "topboxbalance">
           <div class = "topboxbalanceleft">From Account:</div>
           <div class = "topboxbalanceright">
-            <form id="accountfrom" name="accountfrom" method="post" action="accountTransferred.php">
+            <form id="accountfrom" name="accountfrom" method="post" action="ATMTransfer.php">
               <div id="accountfrom">
                 <select name="accountfrom">
                   <?php
@@ -56,7 +72,7 @@ if (!isset($_SESSION['logged_in']) || !$_SESSION['logged_in']) {
         <div class = "topboxbalance">
           <div class = "topboxbalanceleft">To Account:</div>
             <div class = "topboxbalanceright"> 
-              <form id="accountinto" name="accountinto" method="post" action="accountTransferred.php">
+              <form id="accountinto" name="accountinto" method="post" action="ATMTransfer.php">
                 <div id="accountinto">
                   <select name="accountinto">
                     <?php
@@ -69,18 +85,17 @@ if (!isset($_SESSION['logged_in']) || !$_SESSION['logged_in']) {
                   </select>
                   <BR>
                 </div>
-              </form>
             </div>
         </div>
         <div class = "topboxbalance">
             <div class = "topboxbalanceleft">Enter Transfer Amount</div>
         </div>
         <div class = "topboxbalance">
-            <form action="#" method="post">
+            <form action="ATM" method="post">
             <label for="amountentered"></label>
-            <input type="text" id="amountentered"  name="amountentered"><br><br>
+            <input type="text" name = "ammount"><br><br>
             <div class="submitBtnone">
-            <input type="submit" value="Submit">
+            <input type="submit" name="transfer" value="Transfer funds">
             </div>
             </form>
         </div>
