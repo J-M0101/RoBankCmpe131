@@ -71,7 +71,7 @@
             </div>
 
             <div class = "rightBoxR">
-              <button class="toplink"><a href="ATMLogin.html" id="topcolor">LOGOUT</a></button>
+              <button class="toplink"><a href="accountLogin.php" id="topcolor">LOGOUT</a></button>
             </div>
           </div>
       </div>
