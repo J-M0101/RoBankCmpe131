@@ -28,18 +28,6 @@
 <!-- Delete Account php code here  -->
 
 
-<?php
-/*
-$conn = mysqli_connect("localhost", "root", "", "bank");
-$sql = "SELECT * FROM `accounts` WHERE `username`='$username'  ";
-$result = $conn->query($sql);
-echo "<BR>DEBUG:<BR>";
-foreach($result as $row) {
-  echo $row["account"]."<BR>";
-}
-*/
-?>
-
             <form id="accountdelete" name="accountdelete" method="post" action="accountDeleted.php">
               <div id="accountdelete">
                         <!--<form method="post" action="accountDeleted.php">-->

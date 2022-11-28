@@ -1,10 +1,6 @@
 <?php
   session_start();
   $username = "$_SESSION[username]";
-  /*
-  have session_start(); on every page. $_SESSION[username] is saved when logged in, need for many functions
-  We'll put the username back into $username, easier to use.
-  */
  ?>
 
 <html>

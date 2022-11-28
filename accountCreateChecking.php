@@ -33,17 +33,6 @@
 
             echo "<BR> A new checking account has been created:   ". $rand;
 
-            /*
-            echo "<BR>username: " . $username;
-            foreach($result as $row) {
-              echo "<div class ='centerBoxDisplayBalance'>";
-              echo "<h1><FONT COLOR=black>Balance: $" . $row["balance"] . ", " . $row["type"] . " account xxxx-xxxx-xxxx-" .substr($row["account"],-4);
-              echo "</div>";
-              echo "<div class = 'centerTab'>";
-
-              echo "</div>";
-            }
-            */
           }
           ?>
 
