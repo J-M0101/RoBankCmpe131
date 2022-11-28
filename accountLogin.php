@@ -41,7 +41,7 @@
                       <input type="password" name="password"><BR><BR>
                         <input type="submit">
                         <br><br>
-                        <button class="otherOptionButton"><a href="createUser.html" id="topcolor">Don't have an account? Click here!</a></button>
+                        <button class="otherOptionButton"><a href="createUser.php" id="topcolor">Don't have an account? Click here!</a></button>
                         <br><BR>
                         <button class="otherOptionButton"><a href="recoverPassword.html" id="topcolor">Forgot Password? Click here!</a></button>
               </form>
