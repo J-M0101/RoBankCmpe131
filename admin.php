@@ -42,7 +42,7 @@
  <html lang="en" dir="ltr">
    <head>
      <meta charset="UTF-8">
-     <link rel="stylesheet" href="styles.css">
+     <link rel="stylesheet" href="styles2.css">
      <title>Admin</title>
    </head>
    <body>
