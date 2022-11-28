@@ -2,7 +2,7 @@
 session_start();
 
 if (!isset($_SESSION['logged_in']) || !$_SESSION['logged_in']) {
-  header('Location: /robank/ATMLogin.php');
+  header('Location: ATMLogin.php');
 }
 
 
@@ -24,7 +24,7 @@ function list_accounts($account_type) {
       // echo "<a href='/robank/ATMOptions.php?id=" . $row['account'] ."'>" . $row['accountname'] . "</a>";
       ?>
         <div class = "one">
-          <form action="/robank/ATMOptions.php" method="post">
+          <form action="ATMOptions.php" method="post">
             <input type="hidden" name="account_id" value="<?= $row['account'] ?>">
             <button class = "toplinkone"type="submit"><?= $row['accountname'] ?></button>
           </form>
@@ -62,15 +62,11 @@ function list_account_name(){
     <div class = "topBox">
 
       <div class = "leftBoxL">
-        <button class="toplink"><a href="/robank/accountLogin.html" id="topcolor">RoBank</a></button>
+        <button class="toplink"><a href="accountLogin.php" id="topcolor">RoBank</a></button>
       </div>
       <div class = "buttonGroup">
-        <div class = "rightBoxL">
-          <button class="toplink"><a href="/robank/accountInfo.php" id="topcolor">How To Use</a></button>
-        </div>
-
         <div class = "rightBoxR">
-          <button class="toplink"><a href="/robank/ATMLogin.php" id="topcolor">Login</a></button>
+          <button class="toplink"><a href="ATMLogin.php" id="topcolor">Logout</a></button>
         </div>
       </div>
     </div>

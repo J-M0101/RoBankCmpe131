@@ -91,7 +91,7 @@
 <!-- Login and display backend  -->
     <h1>Login Page</h1>
     <!--<form action = "/admin.php" method="post">-->
-    <form action = "/accountLogin.php" method="post">
+    <form action = "accountLogin.php" method="post">
       <input type="text" name="username">
       <input type="password" name="password">
       <input type="submit">

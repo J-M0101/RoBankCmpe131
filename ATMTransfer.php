@@ -2,7 +2,7 @@
 session_start();
 
 if (!isset($_SESSION['logged_in']) || !$_SESSION['logged_in']) {
-    header('Location: /robank/ATMLogin.php');
+    header('Location: ATMLogin.php');
   }
   
   
@@ -72,15 +72,11 @@ if (!isset($_SESSION['logged_in']) || !$_SESSION['logged_in']) {
 <!-- Top of bar box. Designed with CSS flexdispalays.  -->
     <div class = "topBox">
         <div class = "leftBoxL">
-            <button class="toplink"><a href="/robank/accountLogin.html" id="topcolor">RoBank</a></button>
+            <button class="toplink"><a href="accountLogin.php" id="topcolor">RoBank</a></button>
         </div>
         <div class = "buttonGroup">
-            <div class = "rightBoxL">
-                <button class="toplink"><a href="/robank/accountInfo.php" id="topcolor">How To Use</a></button>
-            </div>
-
             <div class = "rightBoxR">
-                <button class="toplink"><a href="/robank/ATMLogin.php" id="topcolor">HOME</a></button>
+                <button class="toplink"><a href="ATMLogin.php" id="topcolor">Logout</a></button>
             </div>
         </div>
     </div>
