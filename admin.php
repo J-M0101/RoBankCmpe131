@@ -46,20 +46,21 @@
      <title>Admin</title>
    </head>
    <body>
-     <h1>Admin panel</h1>
+
      <div class = "topBox">
 
        <div class = "leftBoxL">
-         <button class="toplink"><a href="accountLogin.php" id="topcolor">RoBank</a></button>
+         <h1>ADMIN PANEL</h1>
        </div>
        <div class = "buttonGroup">
 
 
          <div class = "rightBoxR">
-           <button class="toplink"><a href="accountLogin.php" id="topcolor">Back</a></button>
+           <button class="toplink"><a href="accountLogin.php" id="topcolor">BACK</a></button>
          </div>
        </div>
      </div>
+     
      <form class="" action="/admin.php" method="post">
        <input type="text" name="username">
        <input type="password" name="password">
