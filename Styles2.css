@@ -78,6 +78,11 @@ body{
   justify-content: space-between;
 }
 
+.invisibleText{
+  display: none;
+  visibility: hidden;
+}
+
 .centerBox{
   display: flex;
   width: 200rem;

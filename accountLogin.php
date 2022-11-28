@@ -48,7 +48,7 @@
  ?>
 
  <!DOCTYPE html>
- <html lang="en" dir="ltr">
+ <!-- <html lang="en" dir="ltr">
    <head>
      <meta charset="UTF-8">
      <link rel="stylesheet" href="styles.css">
@@ -61,7 +61,7 @@
        <input type="password" name="password">
        <input type="submit">
      </form>
-
+ -->
 
 <html>
   <head>
@@ -95,6 +95,8 @@
       <input type="text" name="username">
       <input type="password" name="password">
       <input type="submit">
+      <br>
+      <a class href="admin.php">‎ ‎ ‎ ‎ </a>
     </form>
     <table>
 
@@ -105,6 +107,7 @@
             $sql = "SELECT * FROM `users` WHERE `username`='$username'";
             $result = $conn->query($sql);
             $_SESSION["username"]=$username;
+
             /*
             foreach($result as $row) {
               echo "<td>" . $row["username"] . "</td>";
@@ -114,6 +117,7 @@
               echo "<td>" . $row["email"] . "</td>";
               echo "<td>" . $row["address"] . "</td>";
             }*/
+
             echo "<button class='toplink'><a href='accountMain.php' id='topcolor'>Click Here to go to accounts</a></button><BR><BR>";
           }
         ?>
