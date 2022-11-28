@@ -53,7 +53,7 @@ error_reporting(E_ERROR | E_PARSE);
               <form action="accountMain.php" method="post">
                 <h2 class="custom">Welcome Back!</h2><br>
                   <label for="username">Username:</label><br>
-                    <input type="text" name="username"><BR>
+                    <input type="text" name="username"><BR><br>
                       <label for="username">Password:</label><br>
                       <input type="password" name="password"><BR><BR>
                         <input type="submit">
