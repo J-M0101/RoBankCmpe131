@@ -1,6 +1,5 @@
 <?php
   session_start();
-  $username = "$_SESSION[username]";
   /*
   have session_start(); on every page. $_SESSION[username] is saved when logged in, need for many functions
   */
@@ -40,6 +39,8 @@
           $results = mysqli_query($conn, $sql);
 
         } else {
+            $_SESSION["username"] = "incorrect password";
+          header("Location: accountLogin.php");
           echo "password incorrect";
         }
       } else {
@@ -47,9 +48,13 @@
       }
       mysqli_close($conn); //close connection
     }else {
-      echo "Nothing was submitted.";
+      $_SESSION["username"] = "One of the information is empty";
+      header("Location: accountLogin.php");
+      echo "Nothing was submitted";
     }
   }
+
+  $username = "$_SESSION[username]";
  ?>
 
 
