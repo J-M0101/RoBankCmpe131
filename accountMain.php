@@ -1,9 +1,10 @@
-
-
-
 <?php
   session_start();
-  $logged_in = false;
+  $username = "$_SESSION[username]";
+  /*
+  have session_start(); on every page. $_SESSION[username] is saved when logged in, need for many functions
+  */
+
 
   if (isset($_POST["username"]) &&
       isset($_POST['password'])) {
@@ -51,7 +52,7 @@
   }
  ?>
 
- 
+
 <html>
   <head>
     <meta charset="UTF-8">
