@@ -53,7 +53,7 @@
 
 
         <div class = "rightBoxR">
-          <button class="toplink"><a href="ATMLogin.php" id="topcolor">ACCESS ATM</a></button>
+          <button class="toplink"><a href="accountLogin.php" id="topcolor">HOME</a></button>
         </div>
       </div>
     </div>
