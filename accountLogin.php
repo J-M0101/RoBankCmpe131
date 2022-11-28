@@ -29,6 +29,7 @@ error_reporting(E_ERROR | E_PARSE);
           <button class="toplink"><a href="accountLogin.php" id="topcolor">RoBank</a></button>
         </div>
         <div class = "buttonGroup">
+
           <div class = "rightBoxL">
             <button class="toplink"><a href="aboutUsPage.html" id="topcolor">ABOUT US</a></button>
           </div>
@@ -36,6 +37,7 @@ error_reporting(E_ERROR | E_PARSE);
           <div class = "rightBoxR">
             <button class="toplink"><a href="ATMLogin.php" id="topcolor">ACCESS ATM</a></button>
           </div>
+          
         </div>
       </div>
 
