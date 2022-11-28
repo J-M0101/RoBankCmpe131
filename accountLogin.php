@@ -1,3 +1,13 @@
+<?php
+  session_start();
+
+  $username = "$_SESSION[username]";
+
+  echo $username;
+
+  session_destroy();
+  ?>
+
 <html>
   <head>
     <meta charset="UTF-8">
@@ -43,7 +53,7 @@
                         <input type="submit">
                         <br><br>
                         <button class="otherOptionButton"><a href="createUser.php" id="topcolor">Don't have an account? Click here!</a></button>
-                        <br><BR>
+                        <br>
                         <button class="otherOptionButton"><a href="recoverPassword.html" id="topcolor">Forgot Password? Click here!</a></button>
                         <br>
                         <a class href="admin.php">‎ ‎ </a>
@@ -52,6 +62,7 @@
             </div>
           </div>
       </div>
+
 
 
   </body>
