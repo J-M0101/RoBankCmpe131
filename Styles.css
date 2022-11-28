@@ -1,0 +1,136 @@
+*{
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  font-family: Arial;
+  color: white;
+  background-image: url('TestBackground.jpeg');
+  background-repeat: no-repeat;
+  background-size: auto;
+}
+
+body{
+  margin: 8px;
+}
+
+.topBox{
+  display: flex;
+  align-self: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 1rem 2rem;
+  background-color: #014421;
+}
+
+.leftBoxL{
+  display: flex;
+  align-items: center;
+  font-style: normal;
+}
+
+.buttonGroup{
+    display: flex;
+    flex-direction: row;
+}
+
+.rightBoxL{
+  display: flex;
+  margin-right:5rem;
+}
+.rightBoxR{
+  display: flex;
+}
+
+.toplink {
+  background-color: #014421;
+  float: left;
+  border: none;
+  font-size: 50px;
+}
+
+#topcolor{
+  text-decoration: none;
+  color: white;
+}
+
+.bottomBox{
+  display: flex;
+  width: inherit;
+  height: inherit;
+  align-self: center;
+  justify-content: space-between;
+
+
+}
+
+.centerBox{
+  display: flex;
+  width: 200rem;
+  align-self:center;
+  justify-content: center;
+  margin-bottom: 15rem;
+
+
+}
+
+.centerLeftBox{
+  display: flex;
+
+}
+
+.atmLogin{
+  background-color: #014421;
+  border: none;
+  font-size: 5rem;
+  margin-top: 5rem;
+}
+
+.centerBox2{
+  display: flex;
+  /* align-self:center; */
+  align-items: center;
+  width: 80rem;
+  justify-content: center;
+  background-color: #014421;
+  justify-content: center;
+
+}
+
+.centerRightBox{
+  display: flex;
+  width: 200px;
+  height: auto;
+  margin-left: 30px;
+  font-size: 1.25rem;
+}
+
+/* Page 2 */
+
+.parentBox{
+  display: flex;
+  width: inherit;
+  height: inherit;
+  align-self: center;
+  justify-content: center;
+}
+
+.lowerBackdrop{
+  display: flex;
+  align-self: center;
+  width: 800px;
+  height: 700px;
+  flex-direction: column;
+  justify-content: space-around;
+
+}
+
+.checkingsaccount{
+  display: flex;
+  justify-content: center;
+  height: 150px;
+  align-items: center;
+  border-width: thick;
+  background-color: #014421;
+}
