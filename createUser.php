@@ -1,7 +1,7 @@
 <?php
   if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    if (isset($_POST["username"]) && isset($_POST["password"]) && isset($_POST["firstname"]) && isset($_POST["lastname"]) && isset($_POST["phone"]) && isset($_POST["email"]) && isset($_POST["address"])) 
-    {   
+    if (isset($_POST["username"]) && isset($_POST["password"]) && isset($_POST["firstname"]) && isset($_POST["lastname"]) && isset($_POST["phone"]) && isset($_POST["email"]) && isset($_POST["address"]))
+    {
       $username = $_POST["username"];
       $password = $_POST["password"];
       $firstname = $_POST["firstname"];
@@ -12,7 +12,7 @@
 
       // Create connection
       $conn = mysqli_connect("localhost", "root", "", "bank");
-      
+
       if (!$conn) {
           die("Connection failed: " . mysqli_connect_error());
       }
@@ -43,19 +43,17 @@
   </head>
 
   <body>
-    
+
     <div class = "topBox">
 
       <div class = "leftBoxL">
-        <button class="toplink"><a href="/robank/accountLogin.html" id="topcolor">RoBank</a></button>
+        <button class="toplink"><a href="accountLogin.php" id="topcolor">RoBank</a></button>
       </div>
       <div class = "buttonGroup">
-        <div class = "rightBoxL">
-          <button class="toplink"><a href="/robank/accountInfo.php" id="topcolor">How To Use</a></button>
-        </div>
+
 
         <div class = "rightBoxR">
-          <button class="toplink"><a href="/robank/ATMLogin.php" id="topcolor">Login</a></button>
+          <button class="toplink"><a href="ATMLogin.php" id="topcolor">ACCESS ATM</a></button>
         </div>
       </div>
     </div>
