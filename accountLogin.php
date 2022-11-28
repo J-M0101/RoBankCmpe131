@@ -17,7 +17,7 @@
       }
 
       // select user
-      $sql = "SELECT password FROM users WHERE username = 'admin'";
+      $sql = "SELECT password FROM users WHERE username = '$username'";
       $results = mysqli_query($conn, $sql);
 
       if ($results) {
@@ -56,7 +56,7 @@
    </head>
    <body>
      <h1>Admin panel</h1>
-     <form class="" action="/admin.php" method="post">
+     <form class="" action="admin.php" method="post">
        <input type="text" name="username">
        <input type="password" name="password">
        <input type="submit">
