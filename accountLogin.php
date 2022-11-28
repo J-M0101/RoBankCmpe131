@@ -1,9 +1,15 @@
 <?php
   session_start();
 
+error_reporting(E_ERROR | E_PARSE);
+
   $username = "$_SESSION[username]";
 
-  echo $username;
+error_reporting(E_ERROR | E_PARSE);
+
+  if ("$_SESSION[username]" === "incorrect password" || "$_SESSION[username]" === "One of the information is empty"){
+    echo $username;
+  }
 
   session_destroy();
   ?>

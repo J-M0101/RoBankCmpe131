@@ -39,7 +39,7 @@
           $results = mysqli_query($conn, $sql);
 
         } else {
-            $_SESSION["username"] = "incorrect";
+            $_SESSION["username"] = "incorrect password";
           header("Location: accountLogin.php");
           echo "password incorrect";
         }
@@ -48,7 +48,7 @@
       }
       mysqli_close($conn); //close connection
     }else {
-      $_SESSION["username"] = "empty";
+      $_SESSION["username"] = "One of the information is empty";
       header("Location: accountLogin.php");
       echo "Nothing was submitted";
     }
