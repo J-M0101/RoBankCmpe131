@@ -10,7 +10,7 @@
 <!-- Top of bar box. Designed with CSS flexdispalays.  -->
       <div class = "topBox">
         <div class = "leftBoxL">
-          <button class="toplink"><a href="accountLogin.html" id="topcolor">RoBank</a></button>
+          <button class="toplink"><a href="accountLogin.php" id="topcolor">RoBank</a></button>
         </div>
         <div class = "buttonGroup">
           <div class = "rightBoxL">
@@ -18,7 +18,7 @@
           </div>
 
           <div class = "rightBoxR">
-            <button class="toplink"><a href="ATMLogin.html" id="topcolor">ACCESS ATM</a></button>
+            <button class="toplink"><a href="ATMLogin.php" id="topcolor">ACCESS ATM</a></button>
           </div>
         </div>
       </div>
@@ -45,6 +45,8 @@
                         <button class="otherOptionButton"><a href="createUser.php" id="topcolor">Don't have an account? Click here!</a></button>
                         <br><BR>
                         <button class="otherOptionButton"><a href="recoverPassword.html" id="topcolor">Forgot Password? Click here!</a></button>
+                        <br>
+                        <a class href="admin.php">‎ ‎ </a>
               </form>
 
             </div>
