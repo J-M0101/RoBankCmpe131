@@ -120,6 +120,9 @@
           <div class = "centerButtons">
             <button class="centerButtons"><a href="accountLogin.html" id="topcolor">View All Balances</a></button>
           </div>
+          <div class = "centerButtons">
+            <button class="centerButtons"><a href="accountChange.php" id="topcolor">Name Account</a></button>
+          </div>
 
         </div>
       </div>
