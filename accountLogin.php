@@ -2,22 +2,22 @@
   session_start();
   $logged_in = false;
 
-  if (isset($_POST["username"]) && isset ($_POST["password"])){
-    if ($_POST["username"] && $_POST["password"]){
+  if (isset($_POST["username"]) &&
+      isset($_POST['password'])) {
+    if ($_POST["username"] && $_POST["password"]) {
       $username = $_POST["username"];
       $password = $_POST["password"];
 
-      // create connection
+      //create connection
       $conn = mysqli_connect("localhost", "root", "", "bank");
 
-      // check connection
-      if (!$conn){
-        die("Connetion failed: " . mysqli_connect_error());
+      //Check connection
+      if (!$conn) {
+        die("Connection failed: " . mysqli_connect_error());
       }
 
-      // select users
-      $sql = "SELECT password FROM users WHERE username = '$username'";
-
+      // select user
+      $sql = "SELECT password FROM users WHERE username = 'admin'";
       $results = mysqli_query($conn, $sql);
 
       if ($results) {
@@ -37,17 +37,30 @@
         } else {
           echo "password incorrect";
         }
-
       } else {
         echo mysqli_error($conn);
       }
-      mysqli_close($conn);
-    } else {
-
+      mysqli_close($conn); //close connection
+    }else {
+      echo "Nothing was submitted.";
     }
   }
  ?>
 
+ <!DOCTYPE html>
+ <html lang="en" dir="ltr">
+   <head>
+     <meta charset="UTF-8">
+     <link rel="stylesheet" href="styles.css">
+     <title>Admin</title>
+   </head>
+   <body>
+     <h1>Admin panel</h1>
+     <form class="" action="/admin.php" method="post">
+       <input type="text" name="username">
+       <input type="password" name="password">
+       <input type="submit">
+     </form>
 
 
 <html>
