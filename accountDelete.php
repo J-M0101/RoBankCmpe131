@@ -22,62 +22,11 @@
           <button class="toplink"><a href="accountLogin.html" id="topcolor">RoBank</a></button>
         </div>
         <div class = "buttonGroup">
-
-          <style>
-            .dropbtn {
-              display: flex;
-              background-color: #014421;
-              align-self: center;
-              border: none;
-              font-size: 25px;
-            }
-
-            .dropdown {
-              position: relative;
-              display: inline-block;
-              display: flex;
-              margin-right:5rem;
-            }
-
-            .dropdown-content {
-              display: none;
-              position: absolute;
-              background-color: #f1f1f1;
-              min-width: 160px;
-              box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-              z-index: 1;
-            }
-
-            .dropdown-content a {
-              color: black;
-              padding: 12px 16px;
-              text-decoration: none;
-              display: block;
-            }
-
-            .dropdown-content a:hover {background-color: #ddd;}
-
-            .dropdown:hover .dropdown-content {display: block;}
-
-            .dropdown:hover .dropbtn {background-color: #3e8e41;}
-            </style>
       </div>
     </div>
 
 <!-- Delete Account php code here  -->
 
-
-<?php
-/*
-$conn = mysqli_connect("localhost", "root", "", "bank");
-$sql = "SELECT * FROM `accounts` WHERE `username`='$username'  ";
-$result = $conn->query($sql);
-echo "<BR>DEBUG:<BR>";
-foreach($result as $row) {
-  echo $row["account"]."<BR>";
-}
-*/
-?>
 
             <form id="accountdelete" name="accountdelete" method="post" action="accountDeleted.php">
               <div id="accountdelete">
