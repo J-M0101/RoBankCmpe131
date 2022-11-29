@@ -20,9 +20,7 @@ error_reporting(E_ERROR | E_PARSE);
     <link rel="stylesheet" href="styles2.css">
     <title>Robank Account Login</title>
   </head>
-
   <body>
-
 <!-- Top of bar box. Designed with CSS flexdispalays.  -->
       <div class = "topBox">
         <div class = "leftBoxL">
@@ -33,14 +31,12 @@ error_reporting(E_ERROR | E_PARSE);
           <div class = "rightBoxL">
             <button class="toplink"><a href="aboutUsPage.html" id="topcolor">ABOUT US</a></button>
           </div>
-
           <div class = "rightBoxR">
             <button class="toplink"><a href="ATMLogin.php" id="topcolor">ACCESS ATM</a></button>
           </div>
 
         </div>
       </div>
-
       <div class = "bottomBox">
         <div class = "centerBox">
             <div class = "centerLeftBox">
@@ -55,7 +51,11 @@ error_reporting(E_ERROR | E_PARSE);
               <form action="accountMain.php" method="post">
                 <h2 class="custom">Welcome Back!</h2><br>
                   <label for="username">Username:</label><br>
+<<<<<<< HEAD
                     <input type="text" name="username"><BR><br>
+=======
+                    <input type="text" name="username"><BR>
+>>>>>>> Josh3.0
                       <label for="username">Password:</label><br>
                       <input type="password" name="password"><BR><BR>
                         <input type="submit">
@@ -66,12 +66,14 @@ error_reporting(E_ERROR | E_PARSE);
                         <br>
                         <a class href="admin.php" style="text-decoration:none;">‎ ‎ </a>
               </form>
-
             </div>
           </div>
       </div>
+<<<<<<< HEAD
 
 
 
+=======
+>>>>>>> Josh3.0
   </body>
 </html>

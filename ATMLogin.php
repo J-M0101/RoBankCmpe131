@@ -28,7 +28,7 @@
                   $_SESSION['logged_in'] = true;
                   $_SESSION['cardnumber'] = $_POST["CardNumber"];
                   // TODO: cache username so you don't have to make hella subquries
-                  // $_SESSION['username'] = "SELECT username FROM accounts where cardnumber = '$r'"
+                  $_SESSION['username'] = $row['username'];
                   // echo "Successful login";
                   header("Location: accountInfo.php");
               }

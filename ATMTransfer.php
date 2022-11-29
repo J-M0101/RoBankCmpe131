@@ -1,63 +1,34 @@
 <?php
 session_start();
 
-if (!isset($_SESSION['logged_in']) || !$_SESSION['logged_in']) {
-    header('Location: ATMLogin.php');
-  }
+  if ($_SERVER['REQUEST_METHOD'] === 'POST'){
   
-  
+  $username = $_SESSION['username'];
   $conn = mysqli_connect("localhost", "root", "", "bank");
   
   if (!$conn) {
       die("Connection failed: " . mysqli_connect_error());
   }
-  
-  function list_from_accounts() {
-  global $conn;
 
-  $id = $_POST['account_id'];
-  $sql = "SELECT accountname FROM accounts where username LIKE (SELECT username FROM accounts WHERE account = '$id');";
-  $results = mysqli_query($conn, $sql);
-  if($results)
-  {
-    while($row = mysqli_fetch_assoc($results)){
-      // echo "<a href='/robank/ATMOptions.php?id=" . $row['account'] ."'>" . $row['accountname'] . "</a>";
-      ?>
-        <div class = "one">
-          <form action="#" method="post">
-            <input type="hidden" name="account_id" value="<?= $_POST['account_id']  ?>">
-            <button class = "#"type="submit"><?= $row['accountname'] ?></button>
-          </form>
-        </div>
-      <?php
-        
-        }
+  if (isset($_POST["accountfrom"]) && isset($_POST["accountinto"]) && isset($_POST["ammount"])){
+    $from = $_POST['accountfrom'];
+    $into = $_POST['accountinto'];
+    $ammount = $_POST['ammount'];
+    echo "The account to transfer form: ".$from."<BR>";
+    echo "The account to transfer form: ".$into."<BR>";
+    echo "Ammount to transfer: ".$ammount."<BR>";
+    $conn = mysqli_connect("localhost", "root", "", "bank");
+    $sql = "UPDATE `accounts` SET `balance`=`balance` - $ammount WHERE `account` = $from";
+    $result = $conn->query($sql);
+
+    $sql = "UPDATE `accounts` SET `balance`=`balance` + $ammount WHERE `account` = $into";
+    $result = $conn->query($sql);
+
+    if($result){
+      header("Location: accountInfo.php");
     }
-}
-
-    function list_to_accounts() {
-        global $conn;
-      
-        $id = $_POST['account_id'];
-        $sql = "SELECT accountname FROM accounts where username LIKE (SELECT username FROM accounts WHERE account = '$id');";
-        $results = mysqli_query($conn, $sql);
-        if($results)
-        {
-          while($row = mysqli_fetch_assoc($results)){
-            // echo "<a href='/robank/ATMOptions.php?id=" . $row['account'] ."'>" . $row['accountname'] . "</a>";
-            ?>
-              <div class = "one">
-                <form action="#" method="post">
-                  <input type="hidden" name="account_id" value="<?= $_POST['account_id']  ?>">
-                  <button class = "#"type="submit"><?= $row['accountname'] ?></button>
-                </form>
-              </div>
-            <?php
-              
-              }
-          }
-}
-
+  }
+}  
 ?>
 
 <html>
@@ -68,8 +39,6 @@ if (!isset($_SESSION['logged_in']) || !$_SESSION['logged_in']) {
   </head>
 
   <body>
-
-<!-- Top of bar box. Designed with CSS flexdispalays.  -->
     <div class = "topBox">
         <div class = "leftBoxL">
             <button class="toplink"><a href="accountLogin.php" id="topcolor">RoBank</a></button>
@@ -82,34 +51,55 @@ if (!isset($_SESSION['logged_in']) || !$_SESSION['logged_in']) {
     </div>
 
     <div class = "bottomBox">
-    
-    <div class ="depoInfo">
-    <!-- <?= $_POST['account_id'] ?> -->
+      <div class ="depoInfo">
         <div class = "topboxbalance">
-            <div class = "topboxbalanceleft">From Account:</div>
-            <div class = "topboxbalanceright"> <?= list_from_accounts() ?> </div>
+          <div class = "topboxbalanceleft">From Account:</div>
+          <div class = "topboxbalanceright">
+            <form id="accountfrom" name="accountfrom" method="post" action="ATMTransfer.php">
+              <div id="accountfrom">
+                <select name="accountfrom">
+                  <?php
+                  $conn = mysqli_connect("localhost", "root", "", "bank");
+                  $sql = "SELECT * FROM `accounts` WHERE `username`='$username'  ";
+                  $result = $conn->query($sql);
+                  foreach($result as $row){?>
+                    <option value="<?php echo $row['account']; ?>"><?php echo $row['accountname'].", balance:". $row['balance']; ?></option>
+                  <?php }?>
+                </select>
+              </div>
+          </div>
         </div>
-
         <div class = "topboxbalance">
-            <div class = "topboxbalanceleft">To Account:</div>
-            <div class = "topboxbalanceright"> <?= list_to_accounts() ?> </div>
+          <div class = "topboxbalanceleft">To Account:</div>
+            <div class = "topboxbalanceright"> 
+              <form id="accountinto" name="accountinto" method="post" action="ATMTransfer.php">
+                <div id="accountinto">
+                  <select name="accountinto">
+                    <?php
+                    $conn = mysqli_connect("localhost", "root", "", "bank");
+                    $sql = "SELECT * FROM `accounts` WHERE `username`='$username'  ";
+                    $result = $conn->query($sql);
+                    foreach($result as $row){?>
+                      <option value="<?php echo $row['account']; ?>"><?php echo $row['accountname'].", balance:". $row['balance']; ?></option>
+                    <?php }?>
+                  </select>
+                  <BR>
+                </div>
+            </div>
         </div>
-
         <div class = "topboxbalance">
             <div class = "topboxbalanceleft">Enter Transfer Amount</div>
         </div>
-
         <div class = "topboxbalance">
-            <form action="#" method="post">
+            <form action="ATM" method="post">
             <label for="amountentered"></label>
-            <input type="text" id="amountentered"  name="amountentered"><br><br>
+            <input type="text" name = "ammount"><br><br>
             <div class="submitBtnone">
-            <input type="submit" value="Submit">
+            <input type="submit" name="transfer" value="Transfer funds">
             </div>
             </form>
         </div>
-
-        </div>
+      </div>
     </div>
   </body>
 </html>

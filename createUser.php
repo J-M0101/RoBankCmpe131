@@ -50,10 +50,15 @@
         <button class="toplink"><a href="accountLogin.php" id="topcolor">RoBank</a></button>
       </div>
       <div class = "buttonGroup">
+<<<<<<< HEAD
 
 
         <div class = "rightBoxR">
           <button class="toplink"><a href="accountLogin.php" id="topcolor">HOME</a></button>
+=======
+        <div class = "rightBoxR">
+          <button class="toplink"><a href="accountLogin.php" id="topcolor">Login</a></button>
+>>>>>>> Josh3.0
         </div>
       </div>
     </div>
