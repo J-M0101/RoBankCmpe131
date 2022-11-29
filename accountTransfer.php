@@ -18,6 +18,13 @@
           <button class="toplink"><a href="accountLogin.html" id="topcolor">RoBank</a></button>
         </div>
         <div class = "buttonGroup">
+
+          <div class = "buttonGroup">
+            <div class = "rightBoxR">
+              <button class="toplink"><a href="accountMain.php" id="topcolor">Home</a></button>
+            </div>
+          </div>
+
       </div>
     </div>
 <!-- Dropdown Boxes  -->
@@ -63,11 +70,6 @@
                                 </div>
                                 </form>
 
-
-
-    <div class = "centerButtons">
-      <button class="centerButtons"><a href="accountMain.php" id="topcolor">Account</a></button>
-    </div>
 
 
     </html>

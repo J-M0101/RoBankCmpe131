@@ -76,7 +76,7 @@
 
 
             <div class = "rightBoxR">
-              <button class="toplink"><a href="accountLogin.php" id="topcolor">LOGOUT</a></button>
+              <button class="toplink"><a href="accountLogin.php" id="topcolor">Logout</a></button>
             </div>
           </div>
       </div>
@@ -106,25 +106,27 @@
 
       <div class = "bottomBox">
         <div class = "centerBox3">
-          <div class = "centerTab">
-            <h2>How can we help today?</h2>
-
-          </div>
+          <h1 style="color:white;">How can we help today?</h1>
           <div class = "centerButtons">
             <button class="centerButtons"><a href="accountTransfer.php" id="topcolor">Transfer Funds</a></button>
           </div>
+          <br>
           <div class = "centerButtons">
             <button class="centerButtons"><a href="accountCreate.php" id="topcolor">Create Checking/Saving Account</a></button>
           </div>
+          <br>
           <div class = "centerButtons">
             <button class="centerButtons"><a href="accountDelete.php" id="topcolor">Delete Checking/Saving Account</a></button>
           </div>
+          <br>
           <div class = "centerButtons">
             <button class="centerButtons"><a href="accountInformation.php" id="topcolor">Account Information</a></button>
           </div>
+          <br>
           <div class = "centerButtons">
             <button class="centerButtons"><a href="accountLogin.html" id="topcolor">View All Balances</a></button>
           </div>
+          <br>
           <div class = "centerButtons">
             <button class="centerButtons"><a href="accountChange.php" id="topcolor">Name Account</a></button>
           </div>

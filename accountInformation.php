@@ -24,13 +24,11 @@
 
         <div class = "buttonGroup">
           <div class = "rightBoxR">
-            <button class="toplink"><a href="accountMain.php" id="topcolor">Return</a></button>
+            <button class="toplink"><a href="accountMain.php" id="topcolor">Home</a></button>
           </div>
         </div>
     </div>
-          <div class = "centerTab">
-            <h2>ACCOUNT INFORMATION</h2>
-          </div>
+          <H3> Account Transfer </H3>
           <div class = "centerList">
 
 

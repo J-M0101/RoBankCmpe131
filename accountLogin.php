@@ -37,7 +37,7 @@ error_reporting(E_ERROR | E_PARSE);
           <div class = "rightBoxR">
             <button class="toplink"><a href="ATMLogin.php" id="topcolor">ACCESS ATM</a></button>
           </div>
-          
+
         </div>
       </div>
 
@@ -64,7 +64,7 @@ error_reporting(E_ERROR | E_PARSE);
                         <br>
                         <button class="otherOptionButton"><a href="recoverPassword.html" id="topcolor">Forgot Password? Click here!</a></button>
                         <br>
-                        <a class href="admin.php">‎ ‎ </a>
+                        <a class href="admin.php" style="text-decoration:none;">‎ ‎ </a>
               </form>
 
             </div>

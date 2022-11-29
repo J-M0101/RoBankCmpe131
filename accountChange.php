@@ -36,6 +36,13 @@ if (isset($_POST["accountchange"])&&(isset($_POST["namechange"]))){
           <button class="toplink"><a href="accountLogin.html" id="topcolor">RoBank</a></button>
         </div>
         <div class = "buttonGroup">
+
+          <div class = "buttonGroup">
+            <div class = "rightBoxR">
+              <button class="toplink"><a href="accountMain.php" id="topcolor">Home</a></button>
+            </div>
+          </div>
+
       </div>
     </div>
 
@@ -67,13 +74,6 @@ if (isset($_POST["accountchange"])&&(isset($_POST["namechange"]))){
 
 <!--DELETE FROM `accounts` WHERE `account` = $accountchange -->
 
-
-
-<!-- Return to menu  -->
-
-                    <div class = "centerButtons">
-                      <button class="centerButtons"><a href="accountMain.php" id="topcolor">Account</a></button>
-                    </div>
 
       </body>
     </html>
