@@ -42,7 +42,7 @@
  <html lang="en" dir="ltr">
    <head>
      <meta charset="UTF-8">
-     <link rel="stylesheet" href="Styles2.css">
+     <link rel="stylesheet" href="Styles.css">
      <title>Admin</title>
    </head>
    <body>
@@ -56,7 +56,7 @@
 
 
          <div class = "rightBoxR">
-           <button class="toplink"><a href="accountLogin.php" id="topcolor">HOME</a></button>
+           <button class="toplink"><a href="accountLogin.php" id="topcolor">Home</a></button>
          </div>
        </div>
      </div>
