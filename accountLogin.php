@@ -51,11 +51,8 @@ error_reporting(E_ERROR | E_PARSE);
               <form action="accountMain.php" method="post">
                 <h2 class="custom">Welcome Back!</h2><br>
                   <label for="username">Username:</label><br>
-<<<<<<< HEAD
                     <input type="text" name="username"><BR><br>
-=======
                     <input type="text" name="username"><BR>
->>>>>>> Josh3.0
                       <label for="username">Password:</label><br>
                       <input type="password" name="password"><BR><BR>
                         <input type="submit">
@@ -69,11 +66,5 @@ error_reporting(E_ERROR | E_PARSE);
             </div>
           </div>
       </div>
-<<<<<<< HEAD
-
-
-
-=======
->>>>>>> Josh3.0
   </body>
 </html>
