@@ -52,7 +52,6 @@ error_reporting(E_ERROR | E_PARSE);
                 <h2 class="custom">Welcome Back!</h2><br>
                   <label for="username">Username:</label><br>
                     <input type="text" name="username"><BR><br>
-                    <input type="text" name="username"><BR>
                       <label for="username">Password:</label><br>
                       <input type="password" name="password"><BR><BR>
                         <input type="submit">
