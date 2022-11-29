@@ -15,7 +15,7 @@
 <!-- Top of bar box. Designed with CSS flexdispalays.  -->
       <div class = "topBox">
         <div class = "leftBoxL">
-          <button class="toplink"><a href="accountLogin.html" id="topcolor">RoBank</a></button>
+          <button class="toplink"><a href="accountLogin.php" id="topcolor">RoBank</a></button>
         </div>
         <div class = "buttonGroup">
 
