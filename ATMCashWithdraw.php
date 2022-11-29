@@ -1,3 +1,48 @@
+<?php    
+    unset($error_message);
+    
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+      if (isset($_POST["depositAmount"])) 
+      {   
+        if ($_POST["depositAmount"]>0)
+        {
+          $depositAmount = $_POST["depositAmount"];
+          $account_id = $_POST['account_id'];
+  
+          // Create connection
+          $conn = mysqli_connect("localhost", "root", "", "bank");
+          
+          if (!$conn) {
+              die("Connection failed: " . mysqli_connect_error());
+          }
+  
+          //login user
+          
+          $sql = "UPDATE accounts SET balance = balance - $depositAmount WHERE account = $account_id; ";
+          // $sql = "SELECT pin, username from accounts WHERE cardnumber = '$creditCardNumber'";
+  
+          // Attempt SQL Query to add to deposit
+          // Need error checking
+          try{
+              $results = mysqli_query($conn, $sql);
+              $error_message = "$$depositAmount has been deposited.";
+          }
+          catch (Exception $e) {
+              $error_message = "Failed to add deposit";
+          }
+        }
+        else
+        {
+          $error_message = "Please enter a positive number";
+        }
+      }
+      else
+      {
+          // $error_message = "Missing input";
+      }
+    }
+?>
+
 <html>
   <head>
     <meta charset="UTF-8">
@@ -31,7 +76,7 @@
                 <div class = "topboxbalanceleft">Enter Withdraw Amount</div>
             </div>
             <div class = "topboxbalance">
-                <form action="#" method="post">
+                <form action="/ATMCashWithdraw.php" method="post">
                 <label for="amountentered"></label>
                 <input type="text" id="amountentered"  name="amountentered"><br><br>
                 <div class="submitBtnone">

@@ -24,7 +24,7 @@ function list_accounts($account_type) {
       // echo "<a href='/robank/ATMOptions.php?id=" . $row['account'] ."'>" . $row['accountname'] . "</a>";
       ?>
         <div class = "one">
-          <form action="/robank/ATMOptions.php" method="post">
+          <form action="/ATMOptions.php" method="post">
             <input type="hidden" name="account_id" value="<?= $row['account'] ?>">
             <button class = "toplinkone"type="submit"><?= $row['accountname'] ?></button>
           </form>
