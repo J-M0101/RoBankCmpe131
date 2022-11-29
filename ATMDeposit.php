@@ -1,6 +1,7 @@
 <?php    
     $conn = mysqli_connect("localhost", "root", "", "bank");
     unset($error_message);
+    $test = true;
 
             //  CASH DEPOSIT CODE //
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
