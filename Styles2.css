@@ -116,11 +116,11 @@ body{
 /* Middle empty box no background*/
 .centerBox3{
   display: flex;
-  /* align-self:center; */
-  /* align-items: center; */
+
+  align-items: center;
   flex-grow: 1;
   flex-direction: column;
-  margin-bottom: 1rem;
+  margin-bottom: 5px;
   height: 30rem;
   justify-content: space-between
   /* justify-content: center; */
@@ -149,6 +149,7 @@ body{
   align-self: center;
   height: 5rem;
   width: 80rem;
+  border-radius: 10px;
   background-color: #014421;
   color: white;
   /* justify-content: center; */
