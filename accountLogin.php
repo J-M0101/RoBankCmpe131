@@ -1,5 +1,7 @@
 <?php
   session_start();
+
+
   error_reporting(E_ERROR | E_PARSE);
   //$username = "$_SESSION[username]";
   if ("$_SESSION[username]" === "incorrect password" || "$_SESSION[username]" === "One of the information is empty"){
@@ -49,6 +51,11 @@
       echo "Nothing was submitted";
     }
   }
+  else{
+    session_destroy();
+    unset ($_SESSION['username']);
+  }
+
   ?>
 
 <html>
