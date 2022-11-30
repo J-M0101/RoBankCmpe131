@@ -33,13 +33,13 @@ if (isset($_POST["accountchange"])&&(isset($_POST["namechange"]))){
 <!-- Top of bar box. Designed with CSS flexdispalays.  -->
       <div class = "topBox">
         <div class = "leftBoxL">
-          <button class="toplink"><a href="accountLogin.html" id="topcolor">RoBank</a></button>
+          <button class="toplink"><a href="accountMain.php" id="topcolor">RoBank</a></button>
         </div>
         <div class = "buttonGroup">
 
           <div class = "buttonGroup">
             <div class = "rightBoxR">
-              <button class="toplink"><a href="accountMain.php" id="topcolor">Home</a></button>
+              <button class="toplink"><a href="accountLogin.php" id="topcolor">Logout</a></button>
             </div>
           </div>
 
