@@ -76,10 +76,6 @@
           </div>
           <br>
           <div class = "centerButtons">
-            <button class="centerButtons"><a href="wireFunds.php" id="topcolor">Wire Funds</a></button>
-          </div>
-          <br>
-          <div class = "centerButtons">
             <button class="centerButtons"><a href="accountChange.php" id="topcolor">Rename Account</a></button>
           </div>
 

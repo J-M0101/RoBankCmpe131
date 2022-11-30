@@ -19,14 +19,30 @@ session_start();
     echo "Ammount to transfer: ".$ammount."<BR>";
     
     $conn = mysqli_connect("localhost", "root", "", "bank");
-    $sql = "UPDATE `accounts` SET `balance`=`balance` - $ammount WHERE `account` = $from";
-    $result = $conn->query($sql);
+    if (!$conn) {
+        die("Connection failed: " . mysqli_connect_error());
+    }
 
-    $sql = "UPDATE `accounts` SET `balance`=`balance` + $ammount WHERE `account` = $into";
-    $result = $conn->query($sql);
+    $sql = "SELECT balance from accounts where account = $from";
+    $results = mysqli_query($conn, $sql);
+    
+    if($results){
+        $row = mysqli_fetch_assoc($results);
+        if($row['balance'] >= $ammount){
+            $conn = mysqli_connect("localhost", "root", "", "bank");
+            $sql = "UPDATE `accounts` SET `balance`=`balance` - $ammount WHERE `account` = $from";
+            $result = $conn->query($sql);
 
-    if($result){
-      header("Location: accountMain.php");
+            $sql = "UPDATE `accounts` SET `balance`=`balance` + $ammount WHERE `account` = $into";
+            $result = $conn->query($sql);
+
+            if($result){
+            header("Location: accountMain.php");
+            }
+        }
+        else{
+            $error_message = "Amount Entered Exceeds Balance";
+        }
     }
   }
 }  
@@ -92,7 +108,7 @@ session_start();
 
                                       <BR>
                                       Please enter total amount to Transfer.<br>
-                                        <input type="number" name = "ammount">
+                                        <input type="number" min="0" name = "ammount">
                                 <input type="submit" name="transfer" value="Transfer funds">
                                 </div>
                                 </form>
