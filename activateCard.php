@@ -42,17 +42,17 @@ if (isset($_POST["card"])&&(isset($_POST["pin"]))){
 
 <form id="card" name="card" method="post" action="activateCard.php">
   <div id="card">
-                Please enter the card to activate
-                <BR>
-                  <input type="text" name = "card">
-                  <BR>
-                  Enter the Pin number:
-                  <BR>
-                  <input type="text" name = "pin">
-                  <BR>
-                          <input type="submit" name="change" value="Change Account Name">
-                          </div>
-                          </form>
+    Please enter the card to activate
+    <BR>
+    <input type="text" name = "card">
+    <BR>
+    Enter the Pin number:
+    <BR>
+    <input type="text" name = "pin">
+    <BR>
+    <input type="submit" name="change" value="Change Account Name">
+  </div>
+</form>
 
 
 <!--DELETE FROM `accounts` WHERE `account` = $accountchange -->

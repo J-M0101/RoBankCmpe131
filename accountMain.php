@@ -100,7 +100,7 @@
         $result = $conn->query($sql);
         foreach($result as $row) {
           echo "<div class ='centerBoxDisplayBalance'>";
-          echo "<h1><FONT COLOR=black>Balance: $" . $row["balance"] . ", " .$row["accountname"]." " . $row["type"] . " account xxxx-xxxx-xxxx-" .substr($row["account"],-4);
+          echo "<h1><FONT COLOR=black>Balance: $" . $row["balance"] . ", " .$row["accountname"] . ", xxxx-xxxx-xxxx-" .substr($row["account"],-4);
           echo "</div>";
           echo "<div class = 'centerTab'>";
           echo "</div>";
@@ -126,15 +126,11 @@
           </div>
           <br>
           <div class = "centerButtons">
-            <button class="centerButtons"><a href="accountChange.php" id="topcolor">Name a Checking/Saving Account</a></button>
-          </div>
-          <br>
-          <div class = "centerButtons">
             <button class="centerButtons"><a href="accountInformation.php" id="topcolor">User Information</a></button>
           </div>
           <br>
           <div class = "centerButtons">
-            <button class="centerButtons"><a href="accountChange.php" id="topcolor">Name Account</a></button>
+            <button class="centerButtons"><a href="accountChange.php" id="topcolor">Rename Account</a></button>
           </div>
 
           RoBank 2022 CMPE131

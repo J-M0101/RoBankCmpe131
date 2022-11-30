@@ -90,7 +90,7 @@ session_start();
                         $sql = "SELECT * FROM `accounts` WHERE `username`='$username'  ";
                         $result = $conn->query($sql);
                         foreach($result as $row){?>
-                          <option value="<?php echo $row['account']; ?>"><?php echo $row['accountname'] . " xxxx-".substr($row["account"],-4).", balance:". $row['balance']; ?></option>
+                          <option value="<?php echo $row['account']; ?>"><?php echo $row['accountname'] . ", xxxx-".substr($row["account"],-4).", balance:". $row['balance']; ?></option>
                         <?php }?>
                       </select>
                   </div>
@@ -107,7 +107,7 @@ session_start();
                                 $sql = "SELECT * FROM `accounts` WHERE `username`='$username'  ";
                                 $result = $conn->query($sql);
                                 foreach($result as $row){?>
-                                  <option value="<?php echo $row['account']; ?>"><?php echo $row['accountname'] . " xxxx-".substr($row["account"],-4).", balance:". $row['balance']; ?></option>
+                                  <option value="<?php echo $row['account']; ?>"><?php echo $row['accountname'] . ", xxxx-".substr($row["account"],-4).", balance:". $row['balance']; ?></option>
                                 <?php }?>
                             </select>
                             <BR>
