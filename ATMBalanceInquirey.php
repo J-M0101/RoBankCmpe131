@@ -36,7 +36,7 @@ function list_balance($b) {
 <html>
   <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="Styles.css">
+    <link rel="stylesheet" href="styles.css">
     <title>Robank ATM Login</title>
   </head>
 
@@ -60,7 +60,7 @@ function list_balance($b) {
         <!-- <?= $_POST['account_id'] ?> -->
             <div class = "topboxbalance">
                 <div class = "topboxbalanceleft">Your Balance:</div>
-                <div class = "topboxbalanceright"><?= list_balance($b) ?></div>
+                <div class = "topboxbalancerightone"><?= list_balance($b) ?></div>
             </div>
             <div class = "middleboxbalance"></div>
         </div>
