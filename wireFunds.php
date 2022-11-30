@@ -23,26 +23,38 @@ session_start();
         die("Connection failed: " . mysqli_connect_error());
     }
 
-    $sql = "SELECT balance from accounts where account = $from";
+    $sql = "SELECT account from accounts where account = $into";
     $results = mysqli_query($conn, $sql);
-    
+
     if($results){
-        $row = mysqli_fetch_assoc($results);
-        if($row['balance'] >= $ammount){
-            $conn = mysqli_connect("localhost", "root", "", "bank");
-            $sql = "UPDATE `accounts` SET `balance`=`balance` - $ammount WHERE `account` = $from";
-            $result = $conn->query($sql);
+      $row = mysqli_num_rows($results);
+      if($row != 0){
+        $sql = "SELECT balance from accounts where account = $from";
+        $results = mysqli_query($conn, $sql);
+    
+        if($results){
+          $row = mysqli_fetch_assoc($results);
+          if($row['balance'] >= $ammount){
+              $conn = mysqli_connect("localhost", "root", "", "bank");
+              $sql = "UPDATE `accounts` SET `balance`=`balance` - $ammount WHERE `account` = $from";
+              $result = $conn->query($sql);
 
-            $sql = "UPDATE `accounts` SET `balance`=`balance` + $ammount WHERE `account` = $into";
-            $result = $conn->query($sql);
+              $sql = "UPDATE `accounts` SET `balance`=`balance` + $ammount WHERE `account` = $into";
+              $result = $conn->query($sql);
 
-            if($result){
-            header("Location: accountMain.php");
-            }
+              if($result){
+                echo "Your money has been transfered.";
+                header("refresh:3;url=accountMain.php");
+              }
+          }
+          else{
+              $error_message = "Amount Entered Exceeds Balance";
+          }
         }
-        else{
-            $error_message = "Amount Entered Exceeds Balance";
-        }
+      }
+      else{
+        $error_message = "Account Does not exist";
+      }
     }
   }
 }  
@@ -108,7 +120,7 @@ session_start();
 
                                       <BR>
                                       Please enter total amount to Transfer.<br>
-                                        <input type="number" min="0" name = "ammount">
+                                        <input type="number" min="0" step="0.1" name = "ammount">
                                 <input type="submit" name="transfer" value="Transfer funds">
                                 </div>
                                 </form>
