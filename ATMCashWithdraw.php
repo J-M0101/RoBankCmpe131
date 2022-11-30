@@ -23,7 +23,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         
                 $results = mysqli_query($conn, $sql1);
                 if($results){
-                    header("Location: accountInfo.php");
+                    echo "Thank you! Please take money.";
+                    header("refresh:3;url=ATMLogin.php");
                 }
             }
             else {
