@@ -38,7 +38,7 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="styles2.css">
+    <link rel="stylesheet" href="Styles2.css">
     <title>Account Info</title>
   </head>
   <body>
@@ -56,12 +56,12 @@
     </div>
 
     <div class = "bottomBox">
-      <div class ="useraccount">
-        <div class = "Box">
+      <div class ="centerBox3">
+        <div>
         CREATE AN ACCOUNT
         </div>
         <form action="#" method="post">
-            <div class = "box">
+            <div class = "center">
             <label>Email: </label>
             <input type="email" name="email"
                     autocomplete="off"
@@ -104,7 +104,7 @@
                         maxlength="50"
                         required/>
             </div><br>
-            <div class = "boxcenter">
+            <div class = "box">
               <input type="submit" value="Submit"> <!-- on submit save the entered fields into variables and then send the user to personal information collection page-->
             </div>
         </form>
