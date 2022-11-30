@@ -1,62 +1,114 @@
-<!DOCTYPE html>
+<?php
+  if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    if (isset($_POST["username"]) && isset($_POST["password"]) && isset($_POST["firstname"]) && isset($_POST["lastname"]) && isset($_POST["phone"]) && isset($_POST["email"]) && isset($_POST["address"]))
+    {
+      $username = $_POST["username"];
+      $password = $_POST["password"];
+      $firstname = $_POST["firstname"];
+      $lastname = $_POST["lastname"];
+      $phone = $_POST["phone"];
+      $email = $_POST["email"];
+      $address = $_POST["address"];
 
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <meta charset="utf-8" />
-    <link rel="stylesheet" href="styles.css">
-    <title>Create an Account</title>
-</head>
-<body>
-    <center>CREATE AN ACCOUNT</center>
+      // Create connection
+      $conn = mysqli_connect("localhost", "root", "", "bank");
 
-    <center>
-        <form action="process.php" method="post">
+      if (!$conn) {
+          die("Connection failed: " . mysqli_connect_error());
+      }
 
-            <label>Email</label>
+      //login user
+      // $sql = "INSERT  creditcard (creditCardNumber, pin) VALUES ('$creditCardNumber', '$pin')";
+      $sql = "INSERT INTO users (username, password, firstname, lastname, phone, email, address) VALUES ('$username', '$password', '$firstname', '$lastname', '$phone', '$email', '$address');";
+      $results = mysqli_query ($conn, $sql);
+
+      if ($results){
+        echo "The user has been added.";
+      } else {
+        echo mysqli_error($conn);
+      }
+    }
+    else
+    {
+        $error_message = "Missing input";
+    }
+  }
+?>
+
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="styles2.css">
+    <title>Account Info</title>
+  </head>
+  <body>
+
+    <div class = "topBox">
+      <div class = "leftBoxL">
+        <button class="toplink"><a href="accountLogin.php" id="topcolor">RoBank</a></button>
+      </div>
+      <div class = "buttonGroup">
+
+        <div class = "rightBoxR">
+          <button class="toplink"><a href="accountLogin.php" id="topcolor">Home</a></button>
+        </div>
+      </div>
+    </div>
+
+    <div class = "bottomBox">
+      <div class ="useraccount">
+        <div class = "Box">
+        CREATE AN ACCOUNT
+        </div>
+        <form action="#" method="post">
+            <div class = "box">
+            <label>Email: </label>
             <input type="email" name="email"
-                   autocomplete="off"
-                   required />
+                    autocomplete="off"
+                    required />
             </div>
 
-            <div>
-                <label>User ID</label>
+            <div class = "box">
+                <label>User ID: </label>
                 <input type="text" name="username" />
             </div>
 
-            <div>
-                <label>Password</label>
+            <div class = "box">
+                <label>Password: </label>
                 <input type="password" name="password" autocomplete="off"
-                       minlength ="8"
-                       maxlength="15"
-                       required/>
+                        minlength ="8"
+                        maxlength="15"
+                        required/>
             </div>
-            <div>
-                <label>First Name</label>
+            <div class = "box">
+                <label>First Name: </label>
                 <input type="firstname" name="firstname" autocomplete="off"
-                       required/>
+                        required/>
             </div>
-            <div>
-                <label>Last Name</label>
+            <div class = "box">
+                <label>Last Name: </label>
                 <input type="lastname" name="lastname" autocomplete="off"
-                       required/>
+                        required/>
             </div>
-            <div>
-                <label>Phone</label>
+            <div class = "box">
+                <label>Phone: </label>
                 <input type="phone" name="phone" autocomplete="off"
-                       minlength ="1"
-                       maxlength="15"
-                       required/>
+                        minlength ="1"
+                        maxlength="15"
+                        required/>
             </div>
-            <div>
-                <label>Address</label>
+            <div class = "box">
+                <label>Address: </label>
                 <input type="address" name="address" autocomplete="off"
-                       minlength ="1"
-                       maxlength="50"
-                       required/>
+                        minlength ="1"
+                        maxlength="50"
+                        required/>
+            </div><br>
+            <div class = "boxcenter">
+              <input type="submit" value="Submit"> <!-- on submit save the entered fields into variables and then send the user to personal information collection page-->
             </div>
-            <input type="submit"> <!-- on submit save the entered fields into variables and then send the user to personal information collection page-->
         </form>
-    </center>
-
-</body>
+      </div>
+    </div>
+  </body>
 </html>
