@@ -126,7 +126,7 @@
           </div>
           <br>
           <div class = "centerButtons">
-            <button class="centerButtons"><a href="accountLogin.html" id="topcolor">View All Balances</a></button>
+            <button class="centerButtons"><a href="wireFunds.php" id="topcolor">Wire Funds</a></button>
           </div>
           <br>
           <div class = "centerButtons">
