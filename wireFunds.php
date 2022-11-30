@@ -14,9 +14,9 @@ session_start();
     $from = $_POST['accountfrom'];
     $into = $_POST['accountinto'];
     $ammount = $_POST['ammount'];
-    echo "The account to transfer form: ".$from."<BR>";
-    echo "The account to transfer form: ".$into."<BR>";
-    echo "Ammount to transfer: ".$ammount."<BR>";
+    // echo "The account to transfer form: ".$from."<BR>";
+    // echo "The account to transfer form: ".$into."<BR>";
+    // echo "Ammount to transfer: ".$ammount."<BR>";
     
     $conn = mysqli_connect("localhost", "root", "", "bank");
     if (!$conn) {
