@@ -12,13 +12,24 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             die("Connection failed: " . mysqli_connect_error());
         }
 
-        $sql = "UPDATE accounts SET balance = balance - '$useramount' WHERE account = '$accountnumber';";
-        
-        $results = mysqli_query($conn, $sql);
-        if($results){
-            header("Location: accountInfo.php");
-        }
 
+        $sql = "SELECT balance FROM accounts where account = $accountnumber";
+        $results = mysqli_query($conn, $sql);
+
+        if($results){
+            $row = mysqli_fetch_assoc($results);
+            if($row['balance'] >= $useramount){
+                $sql1 = "UPDATE accounts SET balance = balance - '$useramount' WHERE account = '$accountnumber';";
+        
+                $results = mysqli_query($conn, $sql1);
+                if($results){
+                    header("Location: accountInfo.php");
+                }
+            }
+            else {
+                $error_message = "Amount Entered Exceeds Balance";
+            }
+        }
     }
 }
 ?>
@@ -62,7 +73,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <form action="" method="post">
                     <input type="hidden" name="account_id" value="<?= $_POST["account_id"] ?>">
                     <label for="amountentered"></label>
-                    <input type="number" id="amountentered" name="amountentered"><br><br>
+                    <input type="number" min="0" id="amountentered" name="amountentered"><br><br>
                     <div class="submitBtnone">
                     <input type="submit" value="Submit">
                     </div>
