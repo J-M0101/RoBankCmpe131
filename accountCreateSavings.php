@@ -40,7 +40,7 @@
             $rand = rand(1000000000000000,9999999999999999); // 16 digit account number
             $rand2 = rand(10000000,99999999); // random card number, 8 digits
             $rand3 = rand(1000,999999); // random pin number
-            $sql = "INSERT INTO `accounts` (`accountname`, `account`, `type`, `username`, `balance`, `cardnumber`, `pin`) VALUES ('savings', '$rand', 'savings', '$username', '0', $rand2, $rand3)";
+            $sql = "INSERT INTO `accounts` (`accountname`, `account`, `type`, `username`, `balance`, `cardnumber`, `pin`) VALUES ('Savings', '$rand', 'savings', '$username', '0', $rand2, $rand3)";
             $result = $conn->query($sql);
             $_SESSION['cardnum'] = $rand2;
 

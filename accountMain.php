@@ -1,64 +1,6 @@
 <?php
   session_start();
   $username = "$_SESSION[username]";
-
-
-  /*
-  have session_start(); on every page. $_SESSION[username] is saved when logged in, need for many functions
-  */
-
-/*
-  if (isset($_POST["username"]) &&
-      isset($_POST['password'])) {
-    if ($_POST["username"] && $_POST["password"]) {
-      $username = $_POST["username"];
-      $password = $_POST["password"];
-
-      //create connection
-      $conn = mysqli_connect("localhost", "root", "", "bank");
-
-      //Check connection
-      if (!$conn) {
-        die("Connection failed: " . mysqli_connect_error());
-      }
-
-      // select user
-      $sql = "SELECT password FROM users WHERE username = '$username'";
-      //$sql = "SELECT password FROM users WHERE username = '$username'";
-      $results = mysqli_query($conn, $sql);
-
-      if ($results) {
-        $row = mysqli_fetch_assoc($results);
-        if ($row["password"] === $password) {
-          $logged_in = true;
-          $_SESSION["username"]=$username;
-          $_SESSION['username']=$username;
-          $_SESSION['username']='$username';
-          $_SESSION['username']="$username";
-          /*
-          $_SESSION['logged_in'] = true;
-
-          $sql = "SELECT * FROM users";
-          $results = mysqli_query($conn, $sql);
-
-        } else {
-            $_SESSION["username"] = "incorrect password";
-          header("Location: accountLogin.php");
-          echo "password incorrect";
-        }
-      } else {
-        echo mysqli_error($conn);
-      }
-      mysqli_close($conn); //close connection
-    }else {
-      $_SESSION["username"] = "One of the information is empty";
-      header("Location: accountLogin.php");
-      echo "Nothing was submitted";
-    }
-  }
-
-  $username = "$_SESSION[username]";
-  */
  ?>
 
 
@@ -115,6 +57,10 @@
           <h1 style="color:white;">How can we help today?</h1>
           <div class = "centerButtons">
             <button class="centerButtons"><a href="accountTransfer.php" id="topcolor">Transfer Funds</a></button>
+          </div>
+          <br>
+          <div class = "centerButtons">
+            <button class="centerButtons"><a href="accountWire.php" id="topcolor">Wire Funds</a></button>
           </div>
           <br>
           <div class = "centerButtons">
