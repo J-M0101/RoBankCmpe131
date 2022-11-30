@@ -1,10 +1,13 @@
 <?php
   session_start();
+  $username = "$_SESSION[username]";
+
+
   /*
   have session_start(); on every page. $_SESSION[username] is saved when logged in, need for many functions
   */
 
-
+/*
   if (isset($_POST["username"]) &&
       isset($_POST['password'])) {
     if ($_POST["username"] && $_POST["password"]) {
@@ -34,7 +37,7 @@
           $_SESSION['username']="$username";
           /*
           $_SESSION['logged_in'] = true;
-          */
+
           $sql = "SELECT * FROM users";
           $results = mysqli_query($conn, $sql);
 
@@ -55,6 +58,7 @@
   }
 
   $username = "$_SESSION[username]";
+  */
  ?>
 
 
@@ -122,11 +126,11 @@
           </div>
           <br>
           <div class = "centerButtons">
-            <button class="centerButtons"><a href="accountInformation.php" id="topcolor">Account Information</a></button>
+            <button class="centerButtons"><a href="accountChange.php" id="topcolor">Name a Checking/Saving Account</a></button>
           </div>
           <br>
           <div class = "centerButtons">
-            <button class="centerButtons"><a href="accountLogin.html" id="topcolor">View All Balances</a></button>
+            <button class="centerButtons"><a href="accountInformation.php" id="topcolor">User Information</a></button>
           </div>
           <br>
           <div class = "centerButtons">
