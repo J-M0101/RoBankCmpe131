@@ -1,3 +1,7 @@
+<?php 
+    session_start();
+    $accountID = $_SESSION['account_id'];
+?>
 
 <html>
   <head>
@@ -10,7 +14,7 @@
 <!-- Top of bar box. Designed with CSS flexdispalays.  -->
     <div class = "topBox">
         <div class = "leftBoxL">
-            <button class="toplink"><a href="accountInfo.php" id="topcolor">RoBank</a></button>
+            <button class="toplink"><a href="ATMOptions.php" id="topcolor">RoBank</a></button>
         </div>
         <div class = "buttonGroup">
             <div class = "rightBoxR">
@@ -18,30 +22,29 @@
             </div>
         </div>
     </div>
-
     <div class = "bottomBox">
         <div class ="optionsPB">
             <!-- <?= $_POST['account_id'] ?> -->
             <div>
                 <form action="ATMCashWithdraw.php" method="post">
-                <input  type="hidden" name="account_id" value="<?= $_POST['account_id']?>">
+                <input  type="hidden" name="account_id" value="<?= $accountID?>">
                 <button style = 'color: white' class="toplink" type="submit">Cash Withdraw</button>
                 </form>
             </div>
             <div>
                 <form action="ATMDeposit.php" method="post">
-                <input type="hidden" name="account_id" value="<?= $_POST['account_id']?>">
+                <input type="hidden" name="account_id" value="<?= $accountID?>">
                 <button style = 'color: white' class="toplink" type="submit">Deposit</button>
                 </form>
             </div>
             <div>
                 <form action="ATMBalanceInquirey.php" method="post">
-                <input type="hidden" name="account_id" value="<?= $_POST['account_id']?>">
+                <input type="hidden" name="account_id" value="<?= $accountID?>">
                 <button style = 'color: white' class="toplink" type="submit">Balance Inquirey</button>
                 </form>
             </div>
             <div><form action="ATMTransfer.php" method="post">
-                <input type="hidden" name="account_id" value="<?= $_POST['account_id']?>">
+                <input type="hidden" name="account_id" value="<?= $accountID?>">
                 <button style = 'color: white' class="toplink" type="submit">Transfer</button>
                 </form>
             </div>

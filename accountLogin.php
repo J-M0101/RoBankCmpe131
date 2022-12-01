@@ -4,7 +4,7 @@
 
   error_reporting(E_ERROR | E_PARSE);
   $username = "$_SESSION[username]";
-  if ("$_SESSION[username]" === "incorrect password" || "$_SESSION[username]" === "One of the information is empty" || "$_SESSION[username]" === "Account has been created! Please log in with your brand new account."){
+  if ("$_SESSION[username]" === "incorrect password" || "$_SESSION[username]" === "One of the information is empty"){
     echo $username;
   }
 
@@ -102,6 +102,10 @@
                       <input type="submit">
                       <br><br>
                       <button class="otherOptionButton"><a href="createUser.php" id="topcolor">Don't have an account? Click here!</a></button>
+                      <br>
+                      <button class="otherOptionButton"><a href="recoverPassword.html" id="topcolor">Forgot Password? Click here!</a></button>
+                      <br>
+                      <button class="otherOptionButton"><a href="activateCard.html" id="topcolor">Activate a bank card!</a></button>
                       <br>
                       <a class href="admin.php" style="text-decoration:none;">‎ ‎ </a>
               </form>
