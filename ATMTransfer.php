@@ -25,7 +25,7 @@ session_start();
     $result = $conn->query($sql);
 
     if($result){
-      header("Location: accountInfo.php");
+      header("Location: ATMOptions.php");
     }
   }
 }  
@@ -41,7 +41,7 @@ session_start();
   <body>
     <div class = "topBox">
         <div class = "leftBoxL">
-            <button class="toplink"><a href="accountInfo.php" id="topcolor">RoBank</a></button>
+            <button class="toplink"><a href="ATMOptions.php" id="topcolor">RoBank</a></button>
         </div>
         <div class = "buttonGroup">
             <div class = "rightBoxR">

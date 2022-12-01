@@ -2,36 +2,45 @@
 session_start();
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    if (isset($_POST["amountentered"]) && isset($_POST["account_id"])) 
-    {   
-        $useramount = $_POST["amountentered"];
-        $accountnumber = $_POST["account_id"];
-        // Create connection
-        $conn = mysqli_connect("localhost", "root", "", "bank");
-        if (!$conn) {
-            die("Connection failed: " . mysqli_connect_error());
-        }
-
-
-        $sql = "SELECT balance FROM accounts where account = $accountnumber";
-        $results = mysqli_query($conn, $sql);
-
-        if($results){
-            $row = mysqli_fetch_assoc($results);
-            if($row['balance'] >= $useramount){
-                $sql1 = "UPDATE accounts SET balance = balance - '$useramount' WHERE account = '$accountnumber';";
+    if(!empty($_POST['amountentered'])){
+        if($_POST['amountentered']>0){
+            if (isset($_POST["amountentered"]) && isset($_POST["account_id"])) 
+            {   
+                $useramount = $_POST["amountentered"];
+                $accountnumber = $_POST["account_id"];
+                // Create connection
+                $conn = mysqli_connect("localhost", "root", "", "bank");
+                if (!$conn) {
+                    die("Connection failed: " . mysqli_connect_error());
+                }
         
-                $results = mysqli_query($conn, $sql1);
+        
+                $sql = "SELECT balance FROM accounts where account = $accountnumber";
+                $results = mysqli_query($conn, $sql);
+        
                 if($results){
-                    echo "Thank you! Please take money.";
-                    header("refresh:3;url=ATMLogin.php");
+                    $row = mysqli_fetch_assoc($results);
+                    if($row['balance'] >= $useramount){
+                        $sql1 = "UPDATE accounts SET balance = balance - '$useramount' WHERE account = '$accountnumber';";
+                
+                        $results = mysqli_query($conn, $sql1);
+                        if($results){
+                            echo "Thank you! Please take money.";
+                            // header("refresh:3;url=ATMOptions.php");
+                        }
+                    }
+                    else {
+                        $error_message = "Amount Entered Exceeds Balance";
+                    }
                 }
             }
-            else {
-                $error_message = "Amount Entered Exceeds Balance";
-            }
+        }
+        else{
+            $error_message = "Please enter a valid number";
         }
     }
+
+
 }
 ?>
 
@@ -48,7 +57,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <!-- Top of bar box. Designed with CSS flexdispalays.  -->
     <div class = "topBox">
         <div class = "leftBoxL">
-            <button class="toplink"><a href="accountInfo.php" id="topcolor">RoBank</a></button>
+            <button class="toplink"><a href="ATMOptions.php" id="topcolor">RoBank</a></button>
         </div>
         <div class = "buttonGroup">
             <div class = "rightBoxR">
