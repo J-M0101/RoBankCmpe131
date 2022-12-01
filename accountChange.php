@@ -66,8 +66,8 @@ if (isset($_POST["accountchange"])&&(isset($_POST["namechange"]))){
             </div>
             <BR>
                             <BR>
-                                  <input type="text" name = "namechange">
-                          <input type="submit" name="change" value="Change Account Name">
+                                  <input type="text" pattern="[a-zA-Z0-9\s]+" name = "namechange">
+                          <input type="submit" name="change"  value="Change Account Name">
                           </div>
                           </form>
 

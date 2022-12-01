@@ -65,6 +65,7 @@
             <label>Email: </label>
             <input type="email" name="email"
                     autocomplete="off"
+                    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
                     required />
             </div>
 
@@ -76,9 +77,9 @@
             <div class = "box">
                 <label>Password: </label>
                 <input type="password" name="password" autocomplete="off"
-                        minlength ="8"
-                        maxlength="15"
-                        required/>
+                pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                title="Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters">
+                <required/>
             </div>
             <div class = "box">
                 <label>First Name: </label>
@@ -93,8 +94,8 @@
             <div class = "box">
                 <label>Phone: </label>
                 <input type="phone" name="phone" autocomplete="off"
-                        minlength ="1"
-                        maxlength="15"
+                        pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                        placeholder="123-456-7890"
                         required/>
             </div>
             <div class = "box">
