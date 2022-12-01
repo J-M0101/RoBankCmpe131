@@ -49,7 +49,7 @@
     }
     ?>
     <form action="accountCreateSavings.php" method="post">
-     <input type="number" min = "0" max = "4" name = "pin">
+     <input type="number" name = "pin">
               <!--<input type="submit" min="0" id="amount" name="amount" value = "Transfer funds">-->
      <input type="submit" name="transfer" value="Enter a pin number">
     </form>
