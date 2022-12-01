@@ -1,4 +1,11 @@
 <?php
+  session_start();
+  error_reporting(E_ERROR | E_PARSE);
+  $username = "$_SESSION[username]";
+ ?>
+
+<?php
+
   if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (isset($_POST["username"]) && isset($_POST["password"]) && isset($_POST["firstname"]) && isset($_POST["lastname"]) && isset($_POST["phone"]) && isset($_POST["email"]) && isset($_POST["address"]))
     {
@@ -23,6 +30,8 @@
       $results = mysqli_query ($conn, $sql);
 
       if ($results){
+        $_SESSION["username"] = "Account has been created! Please log in with your brand new account.";
+        header("Location: accountLogin.php");
         echo "The user has been added.";
       } else {
         echo mysqli_error($conn);
@@ -84,13 +93,13 @@
             <div class = "box">
                 <label>First Name: </label>
                 <input type="firstname" name="firstname" autocomplete="off"
-                        onkeypress="return (event.charCode >= 97 && event.charCode <= 122) || (event.charCode >= 65 && event.charCode <= 90)"; 
+                        onkeypress="return (event.charCode >= 97 && event.charCode <= 122) || (event.charCode >= 65 && event.charCode <= 90)";
                         required/>
             </div>
             <div class = "box">
                 <label>Last Name: </label>
                 <input type="lastname" name="lastname" autocomplete="off"
-                        onkeypress="return (event.charCode >= 97 && event.charCode <= 122) || (event.charCode >= 65 && event.charCode <= 90)"; 
+                        onkeypress="return (event.charCode >= 97 && event.charCode <= 122) || (event.charCode >= 65 && event.charCode <= 90)";
                         required/>
             </div>
             <div class = "box">

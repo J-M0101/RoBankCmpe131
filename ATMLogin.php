@@ -16,7 +16,7 @@
 
         //login user
         // $sql = "INSERT  creditcard (creditCardNumber, pin) VALUES ('$creditCardNumber', '$pin')";
-        $sql = "SELECT account, pin, username from accounts WHERE cardnumber = '$creditCardNumber'";
+        $sql = "SELECT pin, username from accounts WHERE cardnumber = '$creditCardNumber'";
         try{
             $results = mysqli_query($conn, $sql);
 
@@ -29,10 +29,8 @@
                   $_SESSION['cardnumber'] = $_POST["CardNumber"];
                   // TODO: cache username so you don't have to make hella subquries
                   $_SESSION['username'] = $row['username'];
-                  $_SESSION['account_id'] = $row['account'];
-
                   // echo "Successful login";
-                  header("Location: ATMOptions.php");
+                  header("Location: accountInfo.php");
               }
               else
               {
@@ -66,11 +64,6 @@
     <div class = "topBox">
       <div class = "leftBoxL">
         <button class="toplink"><a href="accountLogin.php" id="topcolor">RoBank</a></button>
-      </div>
-      <div class = "buttonGroup">
-        <div class = "rightBoxR">
-          <button class="toplink"><a href="ATMLogin.php" id="topcolor">Home</a></button>
-        </div>
       </div>
     </div>
 
