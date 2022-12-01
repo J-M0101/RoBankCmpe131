@@ -3,10 +3,11 @@
 
 
   error_reporting(E_ERROR | E_PARSE);
-  //$username = "$_SESSION[username]";
+  $username = "$_SESSION[username]";
   if ("$_SESSION[username]" === "incorrect password" || "$_SESSION[username]" === "One of the information is empty"){
     echo $username;
   }
+
   if (isset($_POST["username"]) &&
       isset($_POST['password'])) {
     if ($_POST["username"] && $_POST["password"]) {
