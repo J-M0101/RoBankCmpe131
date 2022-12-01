@@ -19,7 +19,7 @@
 <!-- Top of bar box. Designed with CSS flexdispalays.  -->
       <div class = "topBox">
         <div class = "leftBoxL">
-          <button class="toplink"><a href="accountLogin.php" id="topcolor">RoBank</a></button>
+          <button class="toplink"><a href="accountMain.php" id="topcolor">RoBank</a></button>
         </div>
         <div class = "buttonGroup">
 
@@ -48,7 +48,7 @@
                               $sql = "SELECT * FROM `accounts` WHERE `username`='$username'  ";
                               $result = $conn->query($sql);
                               foreach($result as $row){?>
-                                <option value="<?php echo $row['account']; ?>"><?php echo $row['account'].", balance:". $row['balance']; ?></option>
+                                <option value="<?php echo $row['account']; ?>"><?php echo $row['accountname'] . ", xxxx-".substr($row["account"],-4).", balance:". $row['balance']; ?></option>
                               <?php }?>
                             </select>
                         <input type="submit" name="delete" value="Delete this Account ">

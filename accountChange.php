@@ -33,13 +33,13 @@ if (isset($_POST["accountchange"])&&(isset($_POST["namechange"]))){
 <!-- Top of bar box. Designed with CSS flexdispalays.  -->
       <div class = "topBox">
         <div class = "leftBoxL">
-          <button class="toplink"><a href="accountLogin.html" id="topcolor">RoBank</a></button>
+          <button class="toplink"><a href="accountMain.php" id="topcolor">RoBank</a></button>
         </div>
         <div class = "buttonGroup">
 
           <div class = "buttonGroup">
             <div class = "rightBoxR">
-              <button class="toplink"><a href="accountMain.php" id="topcolor">Home</a></button>
+              <button class="toplink"><a href="accountLogin.php" id="topcolor">Logout</a></button>
             </div>
           </div>
 
@@ -60,7 +60,7 @@ if (isset($_POST["accountchange"])&&(isset($_POST["namechange"]))){
                   $sql = "SELECT * FROM `accounts` WHERE `username`='$username'  ";
                   $result = $conn->query($sql);
                   foreach($result as $row){?>
-                    <option value="<?php echo $row['account']; ?>"><?php echo $row['accountname']. " " .$row['account'].", balance:". $row['balance']; ?></option>
+                    <option value="<?php echo $row['account']; ?>"><?php echo $row['accountname'] . ", xxxx-".substr($row["account"],-4).", balance:". $row['balance']; ?></option>
                   <?php }?>
                 </select>
             </div>

@@ -93,7 +93,7 @@ session_start();
         <div class = "topboxbalance">
             <form action="ATM" method="post">
             <label for="amountentered"></label>
-            <input type="text" name = "ammount"><br><br>
+            <input type="number" min="0" name = "ammount"><br><br>
             <div class="submitBtnone">
             <input type="submit" name="transfer" value="Transfer funds">
             </div>

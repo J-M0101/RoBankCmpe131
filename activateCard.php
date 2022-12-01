@@ -31,7 +31,7 @@ if (isset($_POST["card"])&&(isset($_POST["pin"]))){
 <!-- Top of bar box. Designed with CSS flexdispalays.  -->
       <div class = "topBox">
         <div class = "leftBoxL">
-          <button class="toplink"><a href="accountLogin.php" id="topcolor">RoBank</a></button>
+          <button class="toplink"><a href="accountMain.php" id="topcolor">RoBank</a></button>
         </div>
         <div class = "buttonGroup">
       </div>
@@ -42,17 +42,17 @@ if (isset($_POST["card"])&&(isset($_POST["pin"]))){
 
 <form id="card" name="card" method="post" action="activateCard.php">
   <div id="card">
-                Please enter the card to activate
-                <BR>
-                  <input type="text" name = "card">
-                  <BR>
-                  Enter the Pin number:
-                  <BR>
-                  <input type="text" name = "pin">
-                  <BR>
-                          <input type="submit" name="change" value="Change Account Name">
-                          </div>
-                          </form>
+    Please enter the card to activate
+    <BR>
+    <input type="text" name = "card">
+    <BR>
+    Enter the Pin number:
+    <BR>
+    <input type="text" name = "pin">
+    <BR>
+    <input type="submit" name="change" value="Change Account Name">
+  </div>
+</form>
 
 
 <!--DELETE FROM `accounts` WHERE `account` = $accountchange -->

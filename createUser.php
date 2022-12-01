@@ -38,19 +38,16 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="Styles.css">
+    <link rel="stylesheet" href="styles.css">
     <title>Account Info</title>
   </head>
-
   <body>
 
     <div class = "topBox">
-
       <div class = "leftBoxL">
         <button class="toplink"><a href="accountLogin.php" id="topcolor">RoBank</a></button>
       </div>
       <div class = "buttonGroup">
-
 
         <div class = "rightBoxR">
           <button class="toplink"><a href="accountLogin.php" id="topcolor">Home</a></button>
@@ -60,7 +57,7 @@
 
     <div class = "bottomBox">
       <div class ="useraccount">
-        <div class = "box">
+        <div class = "Box">
         CREATE AN ACCOUNT
         </div>
         <form action="#" method="post">

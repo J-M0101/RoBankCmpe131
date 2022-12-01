@@ -10,7 +10,7 @@
     <div class = "topBox">
 
       <div class = "leftBoxL">
-        <button class="toplink"><a href="/robank/accountLogin.html" id="topcolor">RoBank</a></button>
+        <button class="toplink"><a href="/robank/accountLogin.php" id="topcolor">RoBank</a></button>
       </div>
       <div class = "buttonGroup">
         <div class = "rightBoxL">
