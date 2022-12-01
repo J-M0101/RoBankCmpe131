@@ -120,11 +120,4 @@ session_start();
                         </form>
 
 
-                        <BR>
-                        <BR>
-                        <div class = "centerButtons">
-                          <button class="centerButtons"><a href="accountMain.php" id="topcolor">Account Main</a></button>
-                        </div>
-
-
     </html>
