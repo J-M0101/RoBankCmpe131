@@ -25,7 +25,7 @@
 
           <div class = "buttonGroup">
             <div class = "rightBoxR">
-              <button class="toplink"><a href="accountMain.php" id="topcolor">Home</a></button>
+              <button class="toplink"><a href="accountLogin.php" id="topcolor">Logout</a></button>
             </div>
           </div>
 
