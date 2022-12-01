@@ -14,7 +14,7 @@ if (isset($_POST["accountchange"])&&(isset($_POST["namechange"]))){
   $result = $conn->query($sql);
 
 
-  echo "Acccount # " . $account . " changed to ";
+  echo "Account # " . $account . " changed to ";
   echo $name . "<BR>";
 }
 
