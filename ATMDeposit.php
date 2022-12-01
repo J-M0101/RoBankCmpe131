@@ -131,7 +131,7 @@
       <div class = "bottomBox">
         
         <div class ="depoInfo">
-          <form action="/ATMDeposit.php" method="post" enctype="multipart/form-data">
+          <form action="/ATMDeposit.php" class ="depoInfotwo" method="post" enctype="multipart/form-data">
           <input  type="hidden" name="account_id" value="<?= $_POST['account_id']?>">
             <!-- account ID for deposit function -->
           <!-- <?= $_POST['account_id']  ?> -->
