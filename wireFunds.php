@@ -18,42 +18,47 @@ session_start();
     // echo "The account to transfer form: ".$into."<BR>";
     // echo "Ammount to transfer: ".$ammount."<BR>";
     
-    $conn = mysqli_connect("localhost", "root", "", "bank");
-    if (!$conn) {
-        die("Connection failed: " . mysqli_connect_error());
+    if($ammount === ""){
+      $error_message = "Please enter an amount to transfer";
     }
+    else{
+      $conn = mysqli_connect("localhost", "root", "", "bank");
+      if (!$conn) {
+          die("Connection failed: " . mysqli_connect_error());
+      }
 
-    $sql = "SELECT account from accounts where account = $into";
-    $results = mysqli_query($conn, $sql);
+      $sql = "SELECT account from accounts where account = '$into'";
+      $results = mysqli_query($conn, $sql);
 
-    if($results){
-      $row = mysqli_num_rows($results);
-      if($row != 0){
-        $sql = "SELECT balance from accounts where account = $from";
-        $results = mysqli_query($conn, $sql);
-    
-        if($results){
-          $row = mysqli_fetch_assoc($results);
-          if($row['balance'] >= $ammount){
-              $conn = mysqli_connect("localhost", "root", "", "bank");
-              $sql = "UPDATE `accounts` SET `balance`=`balance` - $ammount WHERE `account` = $from";
-              $result = $conn->query($sql);
+      if($results){
+        $row = mysqli_num_rows($results);
+        if($row != 0){
+          $sql = "SELECT balance from accounts where account = '$from'";
+          $results = mysqli_query($conn, $sql);
+      
+          if($results){
+            $row = mysqli_fetch_assoc($results);
+            if($row['balance'] >= $ammount){
+                $conn = mysqli_connect("localhost", "root", "", "bank");
+                $sql = "UPDATE `accounts` SET `balance`=`balance` - '$ammount' WHERE `account` = '$from'";
+                $result = $conn->query($sql);
 
-              $sql = "UPDATE `accounts` SET `balance`=`balance` + $ammount WHERE `account` = $into";
-              $result = $conn->query($sql);
+                $sql = "UPDATE `accounts` SET `balance`=`balance` + '$ammount' WHERE `account` = '$into'";
+                $result = $conn->query($sql);
 
-              if($result){
-                echo "Your money has been transfered.";
-                header("refresh:3;url=accountMain.php");
-              }
-          }
-          else{
-              $error_message = "Amount Entered Exceeds Balance";
+                if($result){
+                  echo "Your money has been transfered.";
+                  header("refresh:3;url=accountMain.php");
+                }
+            }
+            else{
+                $error_message = "Amount Entered Exceeds Balance";
+            }
           }
         }
-      }
-      else{
-        $error_message = "Account Does not exist";
+        else{
+          $error_message = "Account Does not exist";
+        }
       }
     }
   }
