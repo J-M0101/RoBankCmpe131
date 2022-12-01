@@ -28,13 +28,9 @@
                   $_SESSION['logged_in'] = true;
                   $_SESSION['cardnumber'] = $_POST["CardNumber"];
                   // TODO: cache username so you don't have to make hella subquries
-<<<<<<< Updated upstream
-                  // $_SESSION['username'] = "SELECT username FROM accounts where cardnumber = '$r'"
-=======
                   $_SESSION['username'] = $row['username'];
                   $_SESSION['account_id'] = $row['account'];
 
->>>>>>> Stashed changes
                   // echo "Successful login";
                   header("Location: ATMOptions.php");
               }
@@ -69,15 +65,11 @@
 <!-- Top of bar box. Designed with CSS flexdispalays.  -->
     <div class = "topBox">
       <div class = "leftBoxL">
-        <button class="toplink"><a href="/robank/accountLogin.html" id="topcolor">RoBank</a></button>
+        <button class="toplink"><a href="accountLogin.php" id="topcolor">RoBank</a></button>
       </div>
       <div class = "buttonGroup">
-        <div class = "rightBoxL">
-          <button class="toplink"><a href="/robank/accountInfo.php" id="topcolor">How To Use</a></button>
-        </div>
-
         <div class = "rightBoxR">
-          <button class="toplink"><a href="/robank/ATMLogin.php" id="topcolor">HOME</a></button>
+          <button class="toplink"><a href="ATMLogin.php" id="topcolor">Home</a></button>
         </div>
       </div>
     </div>

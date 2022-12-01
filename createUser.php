@@ -1,8 +1,7 @@
 <?php
-session_start();
   if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    if (isset($_POST["username"]) && isset($_POST["password"]) && isset($_POST["firstname"]) && isset($_POST["lastname"]) && isset($_POST["phone"]) && isset($_POST["email"]) && isset($_POST["address"])) 
-    {   
+    if (isset($_POST["username"]) && isset($_POST["password"]) && isset($_POST["firstname"]) && isset($_POST["lastname"]) && isset($_POST["phone"]) && isset($_POST["email"]) && isset($_POST["address"]))
+    {
       $username = $_POST["username"];
       $password = $_POST["password"];
       $firstname = $_POST["firstname"];
@@ -13,14 +12,14 @@ session_start();
 
       // Create connection
       $conn = mysqli_connect("localhost", "root", "", "bank");
-      
+
       if (!$conn) {
           die("Connection failed: " . mysqli_connect_error());
       }
 
       //login user
       // $sql = "INSERT  creditcard (creditCardNumber, pin) VALUES ('$creditCardNumber', '$pin')";
-      $sql = "INSERT INTO users (username, password, firstname, lastname, phone, email, address) VALUES ('$username', '$password', '$firstname', '$lastname', '$phone', '$email', '$address')";
+      $sql = "INSERT INTO users (username, password, firstname, lastname, phone, email, address) VALUES ('$username', '$password', '$firstname', '$lastname', '$phone', '$email', '$address');";
       $results = mysqli_query ($conn, $sql);
 
       if ($results){
@@ -39,38 +38,34 @@ session_start();
 <html>
   <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="Styles.css">
+    <link rel="stylesheet" href="styles.css">
     <title>Account Info</title>
   </head>
-
   <body>
-    
-    <div class = "topBox">
 
+    <div class = "topBox">
       <div class = "leftBoxL">
-        <button class="toplink"><a href="/robank/accountLogin.html" id="topcolor">RoBank</a></button>
+        <button class="toplink"><a href="accountLogin.php" id="topcolor">RoBank</a></button>
       </div>
       <div class = "buttonGroup">
-        <div class = "rightBoxL">
-          <button class="toplink"><a href="/robank/accountInfo.php" id="topcolor">How To Use</a></button>
-        </div>
 
         <div class = "rightBoxR">
-          <button class="toplink"><a href="/robank/ATMLogin.php" id="topcolor">Login</a></button>
+          <button class="toplink"><a href="accountLogin.php" id="topcolor">Home</a></button>
         </div>
       </div>
     </div>
 
     <div class = "bottomBox">
       <div class ="useraccount">
-        <div class = "box">
+        <div class = "Box">
         CREATE AN ACCOUNT
         </div>
-        <form action="/robank/accountLogin.html" method="post">
+        <form action="#" method="post">
             <div class = "box">
             <label>Email: </label>
             <input type="email" name="email"
                     autocomplete="off"
+                    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
                     required />
             </div>
 
@@ -82,25 +77,27 @@ session_start();
             <div class = "box">
                 <label>Password: </label>
                 <input type="password" name="password" autocomplete="off"
-                        minlength ="8"
-                        maxlength="15"
-                        required/>
+                pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                title="Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters">
+                <required/>
             </div>
             <div class = "box">
                 <label>First Name: </label>
                 <input type="firstname" name="firstname" autocomplete="off"
+                        onkeypress="return (event.charCode >= 97 && event.charCode <= 122) || (event.charCode >= 65 && event.charCode <= 90)"; 
                         required/>
             </div>
             <div class = "box">
                 <label>Last Name: </label>
                 <input type="lastname" name="lastname" autocomplete="off"
+                        onkeypress="return (event.charCode >= 97 && event.charCode <= 122) || (event.charCode >= 65 && event.charCode <= 90)"; 
                         required/>
             </div>
             <div class = "box">
                 <label>Phone: </label>
                 <input type="phone" name="phone" autocomplete="off"
-                        minlength ="1"
-                        maxlength="15"
+                        pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                        placeholder="123-456-7890"
                         required/>
             </div>
             <div class = "box">
@@ -111,7 +108,7 @@ session_start();
                         required/>
             </div><br>
             <div class = "boxcenter">
-              <input type="submit"> <!-- on submit save the entered fields into variables and then send the user to personal information collection page-->
+              <input type="submit" value="Submit"> <!-- on submit save the entered fields into variables and then send the user to personal information collection page-->
             </div>
         </form>
       </div>

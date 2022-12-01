@@ -185,19 +185,11 @@
 <!-- Top of bar box. Designed with CSS flexdispalays.  -->
       <div class = "topBox">
         <div class = "leftBoxL">
-<<<<<<< Updated upstream
-          <button class="toplink"><a href="/robank/accountLogin.html" id="topcolor">RoBank</a></button>
-=======
           <button class="toplink"><a href="ATMOptions.php" id="topcolor">RoBank</a></button>
->>>>>>> Stashed changes
         </div>
         <div class = "buttonGroup">
-          <div class = "rightBoxL">
-            <button class="toplink"><a href="/robank/accountInfo.php" id="topcolor">HOW TO USE?</a></button>
-          </div>
-
           <div class = "rightBoxR">
-            <button class="toplink"><a href="/robank/accountInfo.php" id="topcolor">Login</a></button>
+              <button class="toplink"><a href="ATMLogin.php" id="topcolor">Logout</a></button>
           </div>
         </div>
       </div>

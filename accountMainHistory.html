@@ -1,0 +1,155 @@
+<html>
+  <style>
+    table, th, td {
+      border:1px solid white;
+      text-align: left;
+    }
+  </style>
+
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="styles2.css">
+    <title>Robank Account Page</title>
+  </head>
+
+  <body>
+
+<!-- Top of bar box. Designed with CSS flexdispalays.  -->
+      <div class = "topBox">
+        <div class = "leftBoxL">
+          <button class="toplink"><a href="accountMain.php" id="topcolor">RoBank</a></button>
+        </div>
+        <div class = "buttonGroup">
+
+          <style>
+            .dropbtn {
+              display: flex;
+              background-color: #014421;
+              align-self: center;
+              border: none;
+              font-size: 25px;
+            }
+
+            .dropdown {
+              position: relative;
+              display: inline-block;
+              display: flex;
+              margin-right:5rem;
+            }
+
+            .dropdown-content {
+              display: none;
+              position: absolute;
+              background-color: #f1f1f1;
+              min-width: 160px;
+              box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+              z-index: 1;
+            }
+
+            .dropdown-content a {
+              color: black;
+              padding: 12px 16px;
+              text-decoration: none;
+              display: block;
+            }
+
+            .dropdown-content a:hover {background-color: #ddd;}
+
+            .dropdown:hover .dropdown-content {display: block;}
+
+            .dropdown:hover .dropbtn {background-color: #3e8e41;}
+            </style>
+
+            <div class="dropdown">
+              <button class="dropbtn" id="topcolor">Checking Account: xxxx-xxxx-xxxx-7890</button>
+              <div class="dropdown-content">
+                <a href="#">Checking Account: xxxx-xxxx-xxxx-1246</a>
+                <a href="#">Saving Account: xxxx-xxxx-xxxx-6343</a>
+                <a href="#">Saving Account: xxxx-xxxx-xxxx-6844</a>
+              </div>
+            </div>
+
+            <div class = "rightBoxR">
+              <button class="toplink"><a href="ATMLogin.html" id="topcolor">LOGOUT</a></button>
+            </div>
+          </div>
+      </div>
+
+      <div class = "bottomBox">
+        <div class = "centerBox3">
+
+          <div class = "centerTab">
+            <h2>HISTORY TRANSACTION</h2>
+          </div>
+
+            <div class = "centerList" style="height:300px;overflow:auto;">
+                <table>
+                  <tr>
+                    <th>Account Number</th>
+                    <th>Description</th>
+                    <th>Time and Date</th>
+                  <tr/>
+                  <tr>
+                    <th>xxxx-xxxx-xxxx-4124</th>
+                    <th>Withdrawed $1,560.69</th>
+                    <th>November 16, 2022 @ 5:36AM PST</th>
+                  <tr/>
+                  <tr>
+                    <th>xxxx-xxxx-xxxx-4124</th>
+                    <th>Deposit $391,293,532.00 with check</th>
+                    <th>November 10, 2022 @ 1:00AM PST</th>
+                  <tr/>
+                  <tr>
+                    <th>xxxx-xxxx-xxxx-4205</th>
+                    <th>Deposit $0.01 with cash</th>
+                    <th>November 16, 2022 @ 12:15AM PST</th>
+                  <tr/>
+                  <tr>
+                    <th>xxxx-xxxx-xxxx-5420</th>
+                    <th>Transfered $1,421.43 to account ending in 4124</th>
+                    <th>August 5, 2022 @ 12:00PM PST</th>
+                  <tr/>
+                  <tr>
+                    <th>xxxx-xxxx-xxxx-4124</th>
+                    <th>Received $1,421.43 by account ending in 4124</th>
+                    <th>November 16, 2022 @ 5:36AM PST</th>
+                  <tr/>
+                  <tr>
+                    <th>xxxx-xxxx-xxxx-4124</th>
+                    <th>Removed $69,420.00 by administrator</th>
+                    <th>November 4, 2022 @ 5:06AM PST</th>
+                  <tr/>
+                  <tr>
+                    <th>xxxx-xxxx-xxxx-4124</th>
+                    <th>Deposited $100.00 by administrator</th>
+                    <th>November 1, 2022 @ 5:36AM PST</th>
+                  <tr/>
+                  <tr>
+                    <th>xxxx-xxxx-xxxx-4124</th>
+                    <th>Deposited $100.00 by administrator</th>
+                    <th>November 1, 2022 @ 5:36AM PST</th>
+                  <tr/><tr>
+                    <th>xxxx-xxxx-xxxx-4124</th>
+                    <th>Deposited $100.00 by administrator</th>
+                    <th>November 1, 2022 @ 5:36AM PST</th>
+                  <tr/><tr>
+                    <th>xxxx-xxxx-xxxx-4124</th>
+                    <th>Deposited $100.00 by administrator</th>
+                    <th>November 1, 2022 @ 5:36AM PST</th>
+                  <tr/><tr>
+                    <th>xxxx-xxxx-xxxx-4124</th>
+                    <th>Deposited $100.00 by administrator</th>
+                    <th>November 1, 2022 @ 5:36AM PST</th>
+                  <tr/><tr>
+                    <th>xxxx-xxxx-xxxx-4124</th>
+                    <th>Deposited $100.00 by administrator</th>
+                    <th>November 1, 2022 @ 5:36AM PST</th>
+                  <tr/>
+                </table>
+            </div>
+
+      </div>
+    </div>
+
+  </body>
+</html>

@@ -2,7 +2,7 @@
 session_start();
 
 if (!isset($_SESSION['logged_in']) || !$_SESSION['logged_in']) {
-  header('Location: /robank/ATMLogin.php');
+  header('Location: ATMLogin.php');
 }
 
 
@@ -36,7 +36,7 @@ function list_balance($b) {
 <html>
   <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="Styles.css">
+    <link rel="stylesheet" href="styles.css">
     <title>Robank ATM Login</title>
   </head>
 
@@ -45,19 +45,11 @@ function list_balance($b) {
 <!-- Top of bar box. Designed with CSS flexdispalays.  -->
     <div class = "topBox">
         <div class = "leftBoxL">
-<<<<<<< Updated upstream
-            <button class="toplink"><a href="/robank/accountLogin.html" id="topcolor">RoBank</a></button>
-=======
             <button class="toplink"><a href="ATMOptions.php" id="topcolor">RoBank</a></button>
->>>>>>> Stashed changes
         </div>
         <div class = "buttonGroup">
-            <div class = "rightBoxL">
-                <button class="toplink"><a href="/robank/accountInfo.php" id="topcolor">How To Use</a></button>
-            </div>
-
             <div class = "rightBoxR">
-                <button class="toplink"><a href="/robank/ATMLogin.php" id="topcolor">HOME</a></button>
+                <button class="toplink"><a href="ATMLogin.php" id="topcolor">Logout</a></button>
             </div>
         </div>
     </div>
@@ -68,7 +60,7 @@ function list_balance($b) {
         <!-- <?= $_POST['account_id'] ?> -->
             <div class = "topboxbalance">
                 <div class = "topboxbalanceleft">Your Balance:</div>
-                <div class = "topboxbalanceright"><?= list_balance($b) ?></div>
+                <div class = "topboxbalancerightone"><?= list_balance($b) ?></div>
             </div>
             <div class = "middleboxbalance"></div>
         </div>

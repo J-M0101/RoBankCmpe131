@@ -294,6 +294,13 @@ table td {
   display: flex;
   color: white;
   font-size: 4rem;
+  margin-top: 2rem;
+}
+
+.topboxbalancerightone{
+  display: flex;
+  color: white;
+  font-size: 4rem;
 }
 
 .middleboxbalance{
