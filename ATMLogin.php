@@ -16,7 +16,7 @@
 
         //login user
         // $sql = "INSERT  creditcard (creditCardNumber, pin) VALUES ('$creditCardNumber', '$pin')";
-        $sql = "SELECT pin, username from accounts WHERE cardnumber = '$creditCardNumber'";
+        $sql = "SELECT account, pin, username from accounts WHERE cardnumber = '$creditCardNumber'";
         try{
             $results = mysqli_query($conn, $sql);
 
@@ -28,9 +28,15 @@
                   $_SESSION['logged_in'] = true;
                   $_SESSION['cardnumber'] = $_POST["CardNumber"];
                   // TODO: cache username so you don't have to make hella subquries
+<<<<<<< Updated upstream
                   // $_SESSION['username'] = "SELECT username FROM accounts where cardnumber = '$r'"
+=======
+                  $_SESSION['username'] = $row['username'];
+                  $_SESSION['account_id'] = $row['account'];
+
+>>>>>>> Stashed changes
                   // echo "Successful login";
-                  header("Location: accountInfo.php");
+                  header("Location: ATMOptions.php");
               }
               else
               {

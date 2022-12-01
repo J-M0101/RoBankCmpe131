@@ -45,7 +45,11 @@ function list_balance($b) {
 <!-- Top of bar box. Designed with CSS flexdispalays.  -->
     <div class = "topBox">
         <div class = "leftBoxL">
+<<<<<<< Updated upstream
             <button class="toplink"><a href="/robank/accountLogin.html" id="topcolor">RoBank</a></button>
+=======
+            <button class="toplink"><a href="ATMOptions.php" id="topcolor">RoBank</a></button>
+>>>>>>> Stashed changes
         </div>
         <div class = "buttonGroup">
             <div class = "rightBoxL">

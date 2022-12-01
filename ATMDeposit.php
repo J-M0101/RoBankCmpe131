@@ -5,7 +5,7 @@
 
             //  CASH DEPOSIT CODE //
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-      if (isset($_POST["depositAmount"])) 
+      if (isset($_POST["depositAmount"]) && !empty($_FILES["uploadfile2"]["name"]) && !empty($_FILES["uploadfile"]["name"])) 
       {   
         if (!empty($_POST['depositAmount'])){
           if ($_POST["depositAmount"]>0)
@@ -44,18 +44,8 @@
         {
           $error_message = "Insert your cash into the ATM";
         }
-      }
-      else
-      {
-          $error_message = "Insert your cash into the ATM";
-      }
-    }
-                //  CASH DEPOSIT CODE //
 
-
-                //  CHECK DEPOSIT CODE //
-    if (isset($_POST['upload'])) {
-
+        
         // FRONT and BACK Check  //
       if (!empty($_FILES["uploadfile2"]["name"]) && !empty($_FILES["uploadfile"]["name"])){
 
@@ -75,7 +65,14 @@
         $sql = "INSERT INTO checks(account, filename) VALUES ($account_id, '$filename2')";
 
         // Execute query
-        mysqli_query($conn, $sql);
+        try{
+          mysqli_query($conn, $sql);
+          // $error_message = "$$depositAmount has been deposited.";
+        }
+        catch (Exception $e) {
+          echo "<h3> SQL Upload fail </h3>";
+        }      
+        
     
         // Now let's move the uploaded image into the folder: image
         if (move_uploaded_file($tempname2, $folder2)) {
@@ -86,9 +83,15 @@
 
                 // Front Check
         $sql = "INSERT INTO checks(account, filename) VALUES ($account_id, '$filename')";
-  
+        // echo "$account_id";
         // Execute query
-        mysqli_query($conn, $sql);
+        try{
+          mysqli_query($conn, $sql);
+          // $error_message = "$$depositAmount has been deposited.";
+        }
+        catch (Exception $e) {
+          echo "<h3> SQL Upload fail </h3>";
+        }      
      
         // Now let's move the uploaded image into the folder: image
         if (move_uploaded_file($tempname, $folder)) {
@@ -100,7 +103,70 @@
       else if((empty($_FILES["uploadfile2"]["name"]) xor empty($_FILES["uploadfile"]["name"]))){
         $check_error_message = "Please input both check images";
       }
-  }
+      }
+      else
+      {
+          $error_message = "Please input all fields.";
+      }
+    }
+                //  CASH DEPOSIT CODE //
+
+
+  //               //  CHECK DEPOSIT CODE //
+  //   if (isset($_POST['upload'])) {
+
+  //       // FRONT and BACK Check  //
+  //     if (!empty($_FILES["uploadfile2"]["name"]) && !empty($_FILES["uploadfile"]["name"])){
+
+  //       $filename2 = $_FILES["uploadfile2"]["name"];
+  //       $tempname2 = $_FILES["uploadfile2"]["tmp_name"];
+  //       $filename = $_FILES["uploadfile"]["name"];
+  //       $tempname = $_FILES["uploadfile"]["tmp_name"];
+        
+  //       $folder2 = "./image/" . $filename;
+  //       $folder = "./image/" . $filename2;
+  //       $account_id = $_POST['account_id'];
+     
+  //       $conn = mysqli_connect("localhost", "root", "", "bank");
+     
+  //       // Get all the submitted data from the form
+
+  //       $sql = "INSERT INTO checks(account, filename) VALUES ($account_id, '$filename2')";
+
+  //       // Execute query
+  //       try{
+  //         mysqli_query($conn, $sql);
+  //         // $error_message = "$$depositAmount has been deposited.";
+  //       }
+  //       catch (Exception $e) {
+  //         echo "<h3> SQL Upload fail </h3>";
+  //       }      
+        
+    
+  //       // Now let's move the uploaded image into the folder: image
+  //       if (move_uploaded_file($tempname2, $folder2)) {
+  //           echo "<h3>  Back check has uploaded successfully! Please wait for an agent to review </h3>";
+  //         } else {
+  //           echo "<h3>  Failed to upload image! Please try again.</h3>";
+  //       }
+
+  //               // Front Check
+  //       $sql = "INSERT INTO checks(account, filename) VALUES ($account_id, '$filename')";
+  
+  //       // Execute query
+  //       mysqli_query($conn, $sql);
+     
+  //       // Now let's move the uploaded image into the folder: image
+  //       if (move_uploaded_file($tempname, $folder)) {
+  //           echo "<h3>  Front check has uploaded successfully! Please wait for an agent to review </h3>";
+  //         } else {
+  //           echo "<h3>  Failed to upload image! Please try again.</h3>";
+  //       }
+  //     }
+  //     else if((empty($_FILES["uploadfile2"]["name"]) xor empty($_FILES["uploadfile"]["name"]))){
+  //       $check_error_message = "Please input both check images";
+  //     }
+  // }
 
 
 ?>
@@ -119,7 +185,11 @@
 <!-- Top of bar box. Designed with CSS flexdispalays.  -->
       <div class = "topBox">
         <div class = "leftBoxL">
+<<<<<<< Updated upstream
           <button class="toplink"><a href="/robank/accountLogin.html" id="topcolor">RoBank</a></button>
+=======
+          <button class="toplink"><a href="ATMOptions.php" id="topcolor">RoBank</a></button>
+>>>>>>> Stashed changes
         </div>
         <div class = "buttonGroup">
           <div class = "rightBoxL">

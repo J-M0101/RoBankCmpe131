@@ -58,6 +58,14 @@ if (!isset($_SESSION['logged_in']) || !$_SESSION['logged_in']) {
           }
 }
 
+<<<<<<< Updated upstream
+=======
+    if($result){
+      header("Location: ATMOptions.php");
+    }
+  }
+}  
+>>>>>>> Stashed changes
 ?>
 
 <html>
@@ -72,7 +80,11 @@ if (!isset($_SESSION['logged_in']) || !$_SESSION['logged_in']) {
 <!-- Top of bar box. Designed with CSS flexdispalays.  -->
     <div class = "topBox">
         <div class = "leftBoxL">
+<<<<<<< Updated upstream
             <button class="toplink"><a href="/robank/accountLogin.html" id="topcolor">RoBank</a></button>
+=======
+            <button class="toplink"><a href="ATMOptions.php" id="topcolor">RoBank</a></button>
+>>>>>>> Stashed changes
         </div>
         <div class = "buttonGroup">
             <div class = "rightBoxL">
