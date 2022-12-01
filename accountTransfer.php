@@ -28,8 +28,8 @@ session_start();
       $from = $_POST['accountfrom'];
       $into = $_POST['accountinto'];
       $amount = $_POST['amount'];
-      echo "The account to transfer form: ".$from."<BR>";
-      echo "The account to transfer form: ".$into."<BR>";
+      echo "The account to transfer from: ".$from."<BR>";
+      echo "The account to transfer into: ".$into."<BR>";
       echo "amount to transfer: ".$amount."<BR>";
       // transfer SQL codes
       $conn = mysqli_connect("localhost", "root", "", "bank");
@@ -41,7 +41,7 @@ session_start();
 
       }
       else{
-        echo "That account does not have enough funds to trasnfer. Try again.<BR>";
+        echo "That account does not have enough funds to transfer. Try again.<BR>";
       }
     }
     else {
@@ -81,7 +81,7 @@ session_start();
     <BR>
       <form id="accountfrom" name="accountfrom" method="post" action="accountTransfer.php">
         <div id="accountfrom">
-                      Please select an account to trasfer funds from.
+                      Please select an account to transfer funds from.
                       <BR>
                       <select name="accountfrom">
 
