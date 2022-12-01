@@ -65,11 +65,6 @@
       <div class = "leftBoxL">
         <button class="toplink"><a href="accountLogin.php" id="topcolor">RoBank</a></button>
       </div>
-      <div class = "buttonGroup">
-        <div class = "rightBoxR">
-          <button class="toplink"><a href="ATMLogin.php" id="topcolor">Home</a></button>
-        </div>
-      </div>
     </div>
 
     <div class = "bottomBox">
