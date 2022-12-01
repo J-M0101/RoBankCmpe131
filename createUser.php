@@ -84,11 +84,13 @@
             <div class = "box">
                 <label>First Name: </label>
                 <input type="firstname" name="firstname" autocomplete="off"
+                        onkeypress="return (event.charCode >= 97 && event.charCode <= 122) || (event.charCode >= 65 && event.charCode <= 90)"; 
                         required/>
             </div>
             <div class = "box">
                 <label>Last Name: </label>
                 <input type="lastname" name="lastname" autocomplete="off"
+                        onkeypress="return (event.charCode >= 97 && event.charCode <= 122) || (event.charCode >= 65 && event.charCode <= 90)"; 
                         required/>
             </div>
             <div class = "box">
