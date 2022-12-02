@@ -1,6 +1,9 @@
 <?php
   session_start();
   $username = "$_SESSION[username]";
+  if (!$username){
+    header("Location: accountLogin.php");
+  }
  ?>
 
 <html>
@@ -51,7 +54,7 @@
           }
           ?>
           <form action="accountCreateSavings.php" method="post">
-           <input type="number" min = "0" name = "pin">
+           <input type="number" min = "0" name = "pin" max = "9999">
                     <!--<input type="submit" min="0" id="amount" name="amount" value = "Transfer funds">-->
            <input type="submit" name="transfer" value="Enter a pin number">
           </form>
