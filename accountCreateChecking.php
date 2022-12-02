@@ -1,6 +1,9 @@
 <?php
   session_start();
   $username = "$_SESSION[username]";
+  if (!$username){
+    header("Location: accountLogin.php");
+  }
  ?>
 
 <html>
@@ -24,24 +27,15 @@
     <?php
     if (isset($_POST["pin"])){
       $card = $_SESSION['cardnum'];
-
       $pin = $_POST['pin'];
       $conn = mysqli_connect("localhost", "root", "", "bank");
       $sql = "UPDATE `accounts` SET `pin`= $pin WHERE `cardnumber` = $card";
-
-      try{
-        $results = mysqli_query($conn, $sql);
-        echo "$pin has been set.";
-      }
-      catch (Exception $e) {
-          echo "Failed to set pin";
-      }
-
+      $result = $conn->query($sql);
       header("Location: accountMain.php");
     }
     else
 
-    {
+      {
       $conn = mysqli_connect("localhost", "root", "", "bank");
       $username = "$_SESSION[username]";
       $rand = rand(1000000000000000,9999999999999999); // 16 digit account number
@@ -54,15 +48,15 @@
       echo "<BR> A new checking account has been created:   ". $rand;
       echo "<BR> Card number: " . $rand2;
 
-      echo "<BR> Please enter a four digit pin number: <BR>";
+      echo "<BR> Please enter a pin number: <BR>";
     }
     ?>
     <form action="accountCreateSavings.php" method="post">
 <<<<<<< HEAD
-     <input type="number" min = "0" max = "4" name = "pin">
+     <input type="number" name = "pin" max = "9999">
 =======
      <input type="number" name = "pin">
->>>>>>> parent of ed525f9 (bug fixes)
+>>>>>>> parent of 0f00245 (Bugfix Checking/Saving, redirect ATM login to ATMOptions.php)
               <!--<input type="submit" min="0" id="amount" name="amount" value = "Transfer funds">-->
      <input type="submit" name="transfer" value="Enter a pin number">
     </form>
