@@ -50,7 +50,7 @@
             echo "<BR> A new savings account has been created:   ". $rand;
             echo "<BR> Card number: " . $rand2;
 
-            echo "<BR> Please enter a pin number: <BR>";
+            echo "<BR> Please enter a four digit pin number: <BR>";
           }
           ?>
           <form action="accountCreateSavings.php" method="post">
