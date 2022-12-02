@@ -35,16 +35,27 @@
 
 
     <?php
-      $selected = $_POST['accountdelete'];
-      echo "Account: ". $selected . " has been deleted.<BR>";
+    $selected = $_POST['accountdelete'];
+    $conn = mysqli_connect("localhost", "root", "", "bank");
+    $sql = "SELECT balance FROM accounts where account = $selected";
+    $results = mysqli_query($conn, $sql);
+    $row = mysqli_fetch_assoc($results);
+    if($row['balance'] == 0){
+      echo "The balance in this account was $0. Account has been successfully deleted.<BR>";
+    }
+    else{
+      echo "The remaining balance of $". $row['balance'] . " in this account has been mailed to your address.<BR>";
+    }
+
+
+      //$selected = $_POST['accountdelete'];
+      echo "Account: xxxx-xxxx-xxxx-". substr($selected,-4) . " has been deleted.<BR>";
       $conn = mysqli_connect("localhost", "root", "", "bank");
       $sql = "DELETE FROM `accounts` WHERE `account` = '$selected'";
       $result = $conn->query($sql);
     ?>
 
     <BR>
-    The remaining balance in this account has been mailed to your address.
-
     <div class = "centerButtons">
       <button class="centerButtons"><a href="accountMain.php" id="topcolor">Account</a></button>
     </div>
