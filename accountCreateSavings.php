@@ -54,7 +54,11 @@
           }
           ?>
           <form action="accountCreateSavings.php" method="post">
+<<<<<<< HEAD
            <input type="number" min = "0" name = "pin" max = "9999">
+=======
+           <input type="number" min = "0" name = "pin">
+>>>>>>> parent of 0f00245 (Bugfix Checking/Saving, redirect ATM login to ATMOptions.php)
                     <!--<input type="submit" min="0" id="amount" name="amount" value = "Transfer funds">-->
            <input type="submit" name="transfer" value="Enter a pin number">
           </form>
