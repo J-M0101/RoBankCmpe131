@@ -1,9 +1,6 @@
 <?php
   session_start();
   $username = "$_SESSION[username]";
-  if (!$username){
-    header("Location: accountLogin.php");
-  }
  ?>
 
 <html>
@@ -25,18 +22,26 @@
     </div>
 
     <?php
-
     if (isset($_POST["pin"])){
       $card = $_SESSION['cardnum'];
+
       $pin = $_POST['pin'];
       $conn = mysqli_connect("localhost", "root", "", "bank");
       $sql = "UPDATE `accounts` SET `pin`= $pin WHERE `cardnumber` = $card";
-      $result = $conn->query($sql);
+
+      try{
+        $results = mysqli_query($conn, $sql);
+        echo "$pin has been set.";
+      }
+      catch (Exception $e) {
+          echo "Failed to set pin";
+      }
+
       header("Location: accountMain.php");
     }
     else
-//if ($_SERVER['REQUEST_METHOD'] === 'POST')
-      {
+
+    {
       $conn = mysqli_connect("localhost", "root", "", "bank");
       $username = "$_SESSION[username]";
       $rand = rand(1000000000000000,9999999999999999); // 16 digit account number
@@ -53,7 +58,7 @@
     }
     ?>
     <form action="accountCreateSavings.php" method="post">
-     <input type="number" name = "pin" min = "0" max = "9999">
+     <input type="number" min = "0" max = "4" name = "pin">
               <!--<input type="submit" min="0" id="amount" name="amount" value = "Transfer funds">-->
      <input type="submit" name="transfer" value="Enter a pin number">
     </form>
