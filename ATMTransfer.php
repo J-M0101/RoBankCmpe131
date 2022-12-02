@@ -2,10 +2,10 @@
 session_start();
 
   if ($_SERVER['REQUEST_METHOD'] === 'POST'){
-  
+
   $username = $_SESSION['username'];
   $conn = mysqli_connect("localhost", "root", "", "bank");
-  
+
   if (!$conn) {
       die("Connection failed: " . mysqli_connect_error());
   }
@@ -14,8 +14,8 @@ session_start();
     $from = $_POST['accountfrom'];
     $into = $_POST['accountinto'];
     $ammount = $_POST['ammount'];
-    echo "The account to transfer form: ".$from."<BR>";
-    echo "The account to transfer form: ".$into."<BR>";
+    echo "The account to transfer from: ".$from."<BR>";
+    echo "The account to transfer into: ".$into."<BR>";
     echo "Ammount to transfer: ".$ammount."<BR>";
     $conn = mysqli_connect("localhost", "root", "", "bank");
     $sql = "UPDATE `accounts` SET `balance`=`balance` - $ammount WHERE `account` = $from";
@@ -28,7 +28,7 @@ session_start();
       header("Location: ATMOptions.php");
     }
   }
-}  
+}
 ?>
 
 <html>
@@ -71,7 +71,7 @@ session_start();
         </div>
         <div class = "topboxbalance">
           <div class = "topboxbalanceleft">To Account:</div>
-            <div class = "topboxbalanceright"> 
+            <div class = "topboxbalanceright">
               <form id="accountinto" name="accountinto" method="post" action="ATMTransfer.php">
                 <div id="accountinto">
                   <select name="accountinto">
