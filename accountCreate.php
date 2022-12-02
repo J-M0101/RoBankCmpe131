@@ -1,9 +1,6 @@
 <?php
   session_start();
   $username = "$_SESSION[username]";
-  if (!$username){
-    header("Location: accountLogin.php");
-  }
  ?>
 
 <html>
@@ -32,20 +29,14 @@
     </div>
     <BR>
     <BR>
-      <!--<form id="hiddenForm" method="post" action="receive.php" style="display: none">
-            <input name="accountCreateChecking.php" value="">-->
-
-          <div class = "centerButtons">
-            <button class="centerButtons"><a href="accountCreateChecking.php" id="topcolor">Create A New Checking Account</a></button>
-          </div>
-          <BR>
-    <!--</form>-->
-          <BR>
-          <div class = "centerButtons">
-            <button class="centerButtons"><a href="accountCreateSavings.php" id="topcolor">Create A New Savings Account</a></button>
-          </div>
-          <BR>
-          <BR>
-
-
+    <div class = "centerButtons">
+      <button class="centerButtons"><a href="accountCreateChecking.php" id="topcolor">Create A New Checking Account</a></button>
+    </div>
+    <BR>
+    <BR>
+    <div class = "centerButtons">
+      <button class="centerButtons"><a href="accountCreateSavings.php" id="topcolor">Create A New Savings Account</a></button>
+    </div>
+    <BR>
+      <BR>
     </html>

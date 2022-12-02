@@ -2,10 +2,6 @@
 session_start();
   $username = $_SESSION['username'];
 
-  if (!$username){
-    header("Location: accountLogin.php");
-  }
-
   // only after receiving trasnfer amounts
   /*
   if ($_SERVER['REQUEST_METHOD'] === 'POST'){
@@ -20,10 +16,7 @@ session_start();
     $from = $_POST['accountfrom'];
     $into = $_POST['accountinto'];
     $amount = $_POST['amount'];
-    if ($from === $into ){
-      echo "These two accounts are the same. Please try again.<BR>";
-    }
-    else if ($amount > 0){
+    if ($amount > 0){
       $conn = mysqli_connect("localhost", "root", "", "bank");
       $sql = "SELECT balance FROM accounts where account = $from";
       $results = mysqli_query($conn, $sql);
@@ -35,8 +28,8 @@ session_start();
       $from = $_POST['accountfrom'];
       $into = $_POST['accountinto'];
       $amount = $_POST['amount'];
-      echo "The account to transfer from: xxxx-xxxx-xxxx-". substr($from,-4)."<BR>";
-      echo "The account to transfer into: xxxx-xxxx-xxxx-".substr($into,-4)."<BR>";
+      echo "The account to transfer from: ".$from."<BR>";
+      echo "The account to transfer into: ".$into."<BR>";
       echo "amount to transfer: ".$amount."<BR>";
       // transfer SQL codes
       $conn = mysqli_connect("localhost", "root", "", "bank");
