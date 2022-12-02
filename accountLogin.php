@@ -86,7 +86,7 @@
         <div class = "centerBox">
             <div class = "centerLeftBox">
                 <video width="500rem" height="280rem" controls>
-                    <source src="Kereru.mp4" type="video/mp4">
+                    <source src="How_to_Robank.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
             </div>

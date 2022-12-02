@@ -54,7 +54,22 @@
 
       <div class = "bottomBox">
         <div class = "centerBox3">
-          <h1 style="color:white;">How can we help today?</h1>
+
+<?php
+$conn = mysqli_connect("localhost", "root", "", "bank");
+$sql = "SELECT * FROM `users` WHERE `username`='$username'  ";
+$result = $conn->query($sql);
+$_SESSION['username']=$username;
+foreach($result as $row) {
+  $firstName = $row["firstname"];
+  $lastName = $row["lastname"];
+  $phoneNumber = $row["phone"];
+  $email = $row["email"];
+  $address = $row["address"];
+  echo "<h1><FONT COLOR=white> Hello $firstName, how can we help you today? </h1>";
+}
+
+ ?>
           <div class = "centerButtons">
             <button class="centerButtons"><a href="accountTransfer.php" id="topcolor">Transfer Funds</a></button>
           </div>
