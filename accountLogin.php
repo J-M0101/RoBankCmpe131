@@ -103,8 +103,6 @@
                       <br><br>
                       <button class="otherOptionButton"><a href="createUser.php" id="topcolor">Don't have an account? Click here!</a></button>
                       <br>
-                      <button class="otherOptionButton"><a href="recoverPassword.html" id="topcolor">Forgot Password? Click here!</a></button>
-                      <br>
                       <button class="otherOptionButton"><a href="activateCard.html" id="topcolor">Activate a bank card!</a></button>
                       <br>
                       <a class href="admin.php" style="text-decoration:none;">‎ ‎ </a>

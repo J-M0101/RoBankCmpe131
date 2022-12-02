@@ -61,7 +61,11 @@
           }
           ?>
           <form action="accountCreateSavings.php" method="post">
+<<<<<<< HEAD
            <input type="number" min = "0" name = "pin" id="pin">
+=======
+           <input type="number" min = "0" name = "pin">
+>>>>>>> parent of ed525f9 (bug fixes)
                     <!--<input type="submit" min="0" id="amount" name="amount" value = "Transfer funds">-->
            <input type="submit" name="transfer" value="Enter a pin number">
           </form>
