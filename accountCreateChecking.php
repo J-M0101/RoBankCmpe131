@@ -25,6 +25,7 @@
     </div>
 
     <?php
+
     if (isset($_POST["pin"])){
       $card = $_SESSION['cardnum'];
       $pin = $_POST['pin'];
@@ -34,7 +35,7 @@
       header("Location: accountMain.php");
     }
     else
-
+//if ($_SERVER['REQUEST_METHOD'] === 'POST')
       {
       $conn = mysqli_connect("localhost", "root", "", "bank");
       $username = "$_SESSION[username]";
@@ -52,7 +53,7 @@
     }
     ?>
     <form action="accountCreateSavings.php" method="post">
-     <input type="number" name = "pin" max = "9999">
+     <input type="number" name = "pin" min = "0" max = "9999">
               <!--<input type="submit" min="0" id="amount" name="amount" value = "Transfer funds">-->
      <input type="submit" name="transfer" value="Enter a pin number">
     </form>
